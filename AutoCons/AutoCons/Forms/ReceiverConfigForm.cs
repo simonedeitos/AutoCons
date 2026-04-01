@@ -21,7 +21,7 @@ namespace AutoCons.Forms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            lblReplyTemplate.Text = "Template del messaggio di risposta:\r\nUsa i tag <notfound>...</notfound> per racchiudere la sezione che apparirà SOLO se ci sono numeri non trovati. Usa {numbers} all'interno per il segnaposto dei numeri.";
+            lblReplyTemplate.Text = " Template del messaggio di risposta:\r\nUsa i tag <notfound>...</notfound> per racchiudere la sezione che apparirà SOLO se ci sono numeri non trovati. \r\n Usa {numbers} all'interno per il segnaposto dei numeri non trovati.";
             LoadConfig();
         }
 
@@ -283,6 +283,11 @@ namespace AutoCons.Forms
                 MessageBox.Show($"Errore caricamento configurazione: {ex.Message}", "Errore",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ReceiverConfigForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

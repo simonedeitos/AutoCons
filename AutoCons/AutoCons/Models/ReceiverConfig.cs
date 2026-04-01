@@ -46,6 +46,6 @@ namespace AutoCons.Models
         public string SharedHmacKey { get; set; } = "AutoCons2026!VerificaConsensi";
 
         public string ReplyTemplate { get; set; } =
-            "Gentile mittente,\n\nIn riscontro alla Sua richiesta, in allegato troverà il file CSV con i numeri verificati.\n\n<notfound>Si precisa inoltre che dei numeri verificati, i seguenti: {numbers} non risultano essere numeri in nostro possesso.</notfound>\n\nCordiali saluti.";
+            "Gentile Cliente,\n\nIn riscontro alla Sua richiesta, in allegato troverà il file CSV con i numeri verificati.\n\n<notfound>Si precisa inoltre che dei numeri verificati, i seguenti: {numbers} non risultano essere numeri in nostro possesso.</notfound>\n\nCordiali saluti.";
     }
 }

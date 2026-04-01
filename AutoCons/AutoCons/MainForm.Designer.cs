@@ -15,163 +15,186 @@ namespace AutoCons
 
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-
-            this.tableLayoutPanel = new TableLayoutPanel();
-            this.pnlSender = new Panel();
-            this.lblSenderTitle = new Label();
-            this.lblSenderDesc = new Label();
-            this.btnSender = new Button();
-            this.pnlReceiver = new Panel();
-            this.lblReceiverTitle = new Label();
-            this.lblReceiverDesc = new Label();
-            this.btnReceiver = new Button();
-            this.statusStrip = new StatusStrip();
-            this.tsslStatus = new ToolStripStatusLabel();
-            this.lblVersion = new Label();
-
-            this.tableLayoutPanel.SuspendLayout();
-            this.pnlSender.SuspendLayout();
-            this.pnlReceiver.SuspendLayout();
-            this.statusStrip.SuspendLayout();
-            this.SuspendLayout();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            tableLayoutPanel = new TableLayoutPanel();
+            pnlSender = new Panel();
+            btnSender = new Button();
+            lblSenderDesc = new Label();
+            lblSenderTitle = new Label();
+            pnlReceiver = new Panel();
+            btnReceiver = new Button();
+            lblReceiverDesc = new Label();
+            lblReceiverTitle = new Label();
+            statusStrip = new StatusStrip();
+            tsslStatus = new ToolStripStatusLabel();
+            lblVersion = new Label();
+            tableLayoutPanel.SuspendLayout();
+            pnlSender.SuspendLayout();
+            pnlReceiver.SuspendLayout();
+            statusStrip.SuspendLayout();
+            SuspendLayout();
+            // 
             // tableLayoutPanel
-            this.tableLayoutPanel.ColumnCount = 2;
-            this.tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            this.tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            this.tableLayoutPanel.Controls.Add(this.pnlSender, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.pnlReceiver, 1, 0);
-            this.tableLayoutPanel.Dock = DockStyle.Fill;
-            this.tableLayoutPanel.Location = new Point(0, 0);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 1;
-            this.tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            this.tableLayoutPanel.Size = new Size(800, 420);
-            this.tableLayoutPanel.TabIndex = 0;
-
+            // 
+            tableLayoutPanel.ColumnCount = 2;
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel.Controls.Add(pnlSender, 0, 0);
+            tableLayoutPanel.Controls.Add(pnlReceiver, 1, 0);
+            tableLayoutPanel.Dock = DockStyle.Fill;
+            tableLayoutPanel.Location = new Point(0, 0);
+            tableLayoutPanel.Name = "tableLayoutPanel";
+            tableLayoutPanel.RowCount = 1;
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel.Size = new Size(800, 420);
+            tableLayoutPanel.TabIndex = 0;
+            // 
             // pnlSender
-            this.pnlSender.BackColor = Color.FromArgb(230, 244, 255);
-            this.pnlSender.Controls.Add(this.btnSender);
-            this.pnlSender.Controls.Add(this.lblSenderDesc);
-            this.pnlSender.Controls.Add(this.lblSenderTitle);
-            this.pnlSender.Dock = DockStyle.Fill;
-            this.pnlSender.Margin = new Padding(20);
-            this.pnlSender.Name = "pnlSender";
-            this.pnlSender.Size = new Size(360, 380);
-            this.pnlSender.TabIndex = 0;
-
-            // lblSenderTitle
-            this.lblSenderTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            this.lblSenderTitle.ForeColor = Color.FromArgb(0, 80, 160);
-            this.lblSenderTitle.Location = new Point(20, 40);
-            this.lblSenderTitle.Name = "lblSenderTitle";
-            this.lblSenderTitle.Size = new Size(320, 40);
-            this.lblSenderTitle.Text = "📤  Modalità Sender";
-            this.lblSenderTitle.TextAlign = ContentAlignment.MiddleCenter;
-
-            // lblSenderDesc
-            this.lblSenderDesc.Font = new Font("Segoe UI", 10F);
-            this.lblSenderDesc.ForeColor = Color.FromArgb(60, 60, 60);
-            this.lblSenderDesc.Location = new Point(20, 100);
-            this.lblSenderDesc.Name = "lblSenderDesc";
-            this.lblSenderDesc.Size = new Size(320, 120);
-            this.lblSenderDesc.Text = "Invia email con numeri di telefono da verificare.\n\nCarica la lista numeri, configura la schedulazione e imposta il server email di invio.";
-            this.lblSenderDesc.TextAlign = ContentAlignment.TopCenter;
-
+            // 
+            pnlSender.BackColor = Color.FromArgb(230, 244, 255);
+            pnlSender.Controls.Add(btnSender);
+            pnlSender.Controls.Add(lblSenderDesc);
+            pnlSender.Controls.Add(lblSenderTitle);
+            pnlSender.Dock = DockStyle.Fill;
+            pnlSender.Location = new Point(20, 20);
+            pnlSender.Margin = new Padding(20);
+            pnlSender.Name = "pnlSender";
+            pnlSender.Size = new Size(360, 380);
+            pnlSender.TabIndex = 0;
+            // 
             // btnSender
-            this.btnSender.BackColor = Color.FromArgb(0, 120, 215);
-            this.btnSender.FlatStyle = FlatStyle.Flat;
-            this.btnSender.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            this.btnSender.ForeColor = Color.White;
-            this.btnSender.Location = new Point(60, 260);
-            this.btnSender.Name = "btnSender";
-            this.btnSender.Size = new Size(240, 50);
-            this.btnSender.Text = "Configura Sender";
-            this.btnSender.UseVisualStyleBackColor = false;
-            this.btnSender.Click += new EventHandler(this.btnSender_Click);
-
+            // 
+            btnSender.BackColor = Color.FromArgb(0, 120, 215);
+            btnSender.FlatStyle = FlatStyle.Flat;
+            btnSender.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnSender.ForeColor = Color.White;
+            btnSender.Location = new Point(60, 260);
+            btnSender.Name = "btnSender";
+            btnSender.Size = new Size(240, 50);
+            btnSender.TabIndex = 0;
+            btnSender.Text = "Configura Sender";
+            btnSender.UseVisualStyleBackColor = false;
+            btnSender.Click += btnSender_Click;
+            // 
+            // lblSenderDesc
+            // 
+            lblSenderDesc.Font = new Font("Segoe UI", 10F);
+            lblSenderDesc.ForeColor = Color.FromArgb(60, 60, 60);
+            lblSenderDesc.Location = new Point(20, 100);
+            lblSenderDesc.Name = "lblSenderDesc";
+            lblSenderDesc.Size = new Size(320, 120);
+            lblSenderDesc.TabIndex = 1;
+            lblSenderDesc.Text = "Invia email con numeri di telefono da verificare.\n\nCarica la lista numeri, configura la schedulazione e imposta il server email di invio.";
+            lblSenderDesc.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblSenderTitle
+            // 
+            lblSenderTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblSenderTitle.ForeColor = Color.FromArgb(0, 80, 160);
+            lblSenderTitle.Location = new Point(20, 40);
+            lblSenderTitle.Name = "lblSenderTitle";
+            lblSenderTitle.Size = new Size(320, 40);
+            lblSenderTitle.TabIndex = 2;
+            lblSenderTitle.Text = "📤  Modalità Sender";
+            lblSenderTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // pnlReceiver
-            this.pnlReceiver.BackColor = Color.FromArgb(230, 255, 240);
-            this.pnlReceiver.Controls.Add(this.btnReceiver);
-            this.pnlReceiver.Controls.Add(this.lblReceiverDesc);
-            this.pnlReceiver.Controls.Add(this.lblReceiverTitle);
-            this.pnlReceiver.Dock = DockStyle.Fill;
-            this.pnlReceiver.Margin = new Padding(20);
-            this.pnlReceiver.Name = "pnlReceiver";
-            this.pnlReceiver.Size = new Size(360, 380);
-            this.pnlReceiver.TabIndex = 1;
-
-            // lblReceiverTitle
-            this.lblReceiverTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            this.lblReceiverTitle.ForeColor = Color.FromArgb(0, 130, 60);
-            this.lblReceiverTitle.Location = new Point(20, 40);
-            this.lblReceiverTitle.Name = "lblReceiverTitle";
-            this.lblReceiverTitle.Size = new Size(320, 40);
-            this.lblReceiverTitle.Text = "📥  Modalità Receiver";
-            this.lblReceiverTitle.TextAlign = ContentAlignment.MiddleCenter;
-
-            // lblReceiverDesc
-            this.lblReceiverDesc.Font = new Font("Segoe UI", 10F);
-            this.lblReceiverDesc.ForeColor = Color.FromArgb(60, 60, 60);
-            this.lblReceiverDesc.Location = new Point(20, 100);
-            this.lblReceiverDesc.Name = "lblReceiverDesc";
-            this.lblReceiverDesc.Size = new Size(320, 120);
-            this.lblReceiverDesc.Text = "Ricevi e analizza email con numeri da verificare.\n\nCarica il CSV dei consensi, configura la casella IMAP e imposta la risposta automatica.";
-            this.lblReceiverDesc.TextAlign = ContentAlignment.TopCenter;
-
+            // 
+            pnlReceiver.BackColor = Color.FromArgb(230, 255, 240);
+            pnlReceiver.Controls.Add(btnReceiver);
+            pnlReceiver.Controls.Add(lblReceiverDesc);
+            pnlReceiver.Controls.Add(lblReceiverTitle);
+            pnlReceiver.Dock = DockStyle.Fill;
+            pnlReceiver.Location = new Point(420, 20);
+            pnlReceiver.Margin = new Padding(20);
+            pnlReceiver.Name = "pnlReceiver";
+            pnlReceiver.Size = new Size(360, 380);
+            pnlReceiver.TabIndex = 1;
+            // 
             // btnReceiver
-            this.btnReceiver.BackColor = Color.FromArgb(0, 160, 80);
-            this.btnReceiver.FlatStyle = FlatStyle.Flat;
-            this.btnReceiver.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            this.btnReceiver.ForeColor = Color.White;
-            this.btnReceiver.Location = new Point(60, 260);
-            this.btnReceiver.Name = "btnReceiver";
-            this.btnReceiver.Size = new Size(240, 50);
-            this.btnReceiver.Text = "Configura Receiver";
-            this.btnReceiver.UseVisualStyleBackColor = false;
-            this.btnReceiver.Click += new EventHandler(this.btnReceiver_Click);
-
+            // 
+            btnReceiver.BackColor = Color.FromArgb(0, 160, 80);
+            btnReceiver.FlatStyle = FlatStyle.Flat;
+            btnReceiver.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnReceiver.ForeColor = Color.White;
+            btnReceiver.Location = new Point(60, 260);
+            btnReceiver.Name = "btnReceiver";
+            btnReceiver.Size = new Size(240, 50);
+            btnReceiver.TabIndex = 0;
+            btnReceiver.Text = "Configura Receiver";
+            btnReceiver.UseVisualStyleBackColor = false;
+            btnReceiver.Click += btnReceiver_Click;
+            // 
+            // lblReceiverDesc
+            // 
+            lblReceiverDesc.Font = new Font("Segoe UI", 10F);
+            lblReceiverDesc.ForeColor = Color.FromArgb(60, 60, 60);
+            lblReceiverDesc.Location = new Point(20, 100);
+            lblReceiverDesc.Name = "lblReceiverDesc";
+            lblReceiverDesc.Size = new Size(320, 120);
+            lblReceiverDesc.TabIndex = 1;
+            lblReceiverDesc.Text = "Ricevi e analizza email con numeri da verificare.\n\nCarica il CSV dei consensi, configura la casella IMAP e imposta la risposta automatica.";
+            lblReceiverDesc.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblReceiverTitle
+            // 
+            lblReceiverTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblReceiverTitle.ForeColor = Color.FromArgb(0, 130, 60);
+            lblReceiverTitle.Location = new Point(20, 40);
+            lblReceiverTitle.Name = "lblReceiverTitle";
+            lblReceiverTitle.Size = new Size(320, 40);
+            lblReceiverTitle.TabIndex = 2;
+            lblReceiverTitle.Text = "📥  Modalità Receiver";
+            lblReceiverTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // statusStrip
-            this.statusStrip.Items.AddRange(new ToolStripItem[] { this.tsslStatus });
-            this.statusStrip.Location = new Point(0, 420);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new Size(800, 22);
-            this.statusStrip.TabIndex = 1;
-            this.tsslStatus.Name = "tsslStatus";
-            this.tsslStatus.Text = "Pronto";
-
+            // 
+            statusStrip.Items.AddRange(new ToolStripItem[] { tsslStatus });
+            statusStrip.Location = new Point(0, 420);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(800, 22);
+            statusStrip.TabIndex = 1;
+            // 
+            // tsslStatus
+            // 
+            tsslStatus.Name = "tsslStatus";
+            tsslStatus.Size = new Size(43, 17);
+            tsslStatus.Text = "Pronto";
+            // 
             // lblVersion
-            this.lblVersion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.lblVersion.Font = new Font("Segoe UI", 8F);
-            this.lblVersion.ForeColor = Color.Gray;
-            this.lblVersion.Location = new Point(680, 4);
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new Size(110, 20);
-            this.lblVersion.Text = "AutoCons v1.0";
-            this.lblVersion.TextAlign = ContentAlignment.MiddleRight;
-
+            // 
+            lblVersion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblVersion.Font = new Font("Segoe UI", 8F);
+            lblVersion.ForeColor = Color.Gray;
+            lblVersion.Location = new Point(680, 4);
+            lblVersion.Name = "lblVersion";
+            lblVersion.Size = new Size(110, 20);
+            lblVersion.TabIndex = 0;
+            lblVersion.Text = "AutoCons v1.0";
+            lblVersion.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // MainForm
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(800, 442);
-            this.Controls.Add(this.lblVersion);
-            this.Controls.Add(this.tableLayoutPanel);
-            this.Controls.Add(this.statusStrip);
-            this.Font = new Font("Segoe UI", 9F);
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "MainForm";
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "AutoCons - Verifica Consensi Telefonici";
-
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.pnlSender.ResumeLayout(false);
-            this.pnlReceiver.ResumeLayout(false);
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 442);
+            Controls.Add(lblVersion);
+            Controls.Add(tableLayoutPanel);
+            Controls.Add(statusStrip);
+            Font = new Font("Segoe UI", 9F);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AutoCons - Verifica Consensi Telefonici";
+            tableLayoutPanel.ResumeLayout(false);
+            pnlSender.ResumeLayout(false);
+            pnlReceiver.ResumeLayout(false);
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -15,585 +15,728 @@ namespace AutoCons.Forms
 
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-
-            this.tabControl = new TabControl();
-            this.tabNumbers = new TabPage();
-            this.tabSchedule = new TabPage();
-            this.tabEmail = new TabPage();
-            this.tabSecurity = new TabPage();
-
-            // --- Tab Numbers ---
-            this.grpNumbersFile = new GroupBox();
-            this.lblNumberCount = new Label();
-            this.btnBrowseNumbers = new Button();
-            this.txtNumbersFile = new TextBox();
-            this.lblNumbersFile = new Label();
-            this.dgvNumbers = new DataGridView();
-
-            // --- Tab Schedule ---
-            this.grpSchedule = new GroupBox();
-            this.flpDays = new FlowLayoutPanel();
-            this.lblDays = new Label();
-            this.grpTimeRange = new GroupBox();
-            this.tpMaxTime = new DateTimePicker();
-            this.lblMaxTime = new Label();
-            this.tpMinTime = new DateTimePicker();
-            this.lblMinTime = new Label();
-            this.grpNumbersPerEmail = new GroupBox();
-            this.nudNumbersPerEmail = new NumericUpDown();
-            this.lblNumbersPerEmail = new Label();
-
-            // --- Tab Email ---
-            this.grpSmtp = new GroupBox();
-            this.chkSmtpSsl = new CheckBox();
-            this.nudSmtpPort = new NumericUpDown();
-            this.lblSmtpPort = new Label();
-            this.txtSmtpServer = new TextBox();
-            this.lblSmtpServer = new Label();
-            this.grpImap = new GroupBox();
-            this.chkImapSsl = new CheckBox();
-            this.nudImapPort = new NumericUpDown();
-            this.lblImapPort = new Label();
-            this.txtImapServer = new TextBox();
-            this.lblImapServer = new Label();
-            this.grpCredentials = new GroupBox();
-            this.txtSenderDisplayName = new TextBox();
-            this.lblSenderDisplayName = new Label();
-            this.txtPassword = new TextBox();
-            this.lblPassword = new Label();
-            this.txtUsername = new TextBox();
-            this.lblUsername = new Label();
-            this.grpMessage = new GroupBox();
-            this.txtBodyTemplate = new TextBox();
-            this.lblBodyTemplate = new Label();
-            this.txtSubject = new TextBox();
-            this.lblSubject = new Label();
-            this.txtRecipients = new TextBox();
-            this.lblRecipients = new Label();
-
-            // --- Tab Security ---
-            this.grpSecurity = new GroupBox();
-            this.txtHmacKey = new TextBox();
-            this.lblHmacKey = new Label();
-
-            // --- Buttons ---
-            this.pnlButtons = new Panel();
-            this.btnViewHistory = new Button();
-            this.btnSendNow = new Button();
-            this.btnSchedule = new Button();
-            this.btnLoadConfig = new Button();
-            this.btnSaveConfig = new Button();
-
-            // --- History panel ---
-            this.pnlHistory = new Panel();
-            this.dgvHistory = new DataGridView();
-            this.lblHistory = new Label();
-
-            this.tabControl.SuspendLayout();
-            this.tabNumbers.SuspendLayout();
-            this.tabSchedule.SuspendLayout();
-            this.tabEmail.SuspendLayout();
-            this.tabSecurity.SuspendLayout();
-            this.grpNumbersFile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dgvNumbers).BeginInit();
-            this.grpSchedule.SuspendLayout();
-            this.grpTimeRange.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudNumbersPerEmail).BeginInit();
-            this.grpSmtp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudSmtpPort).BeginInit();
-            this.grpImap.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudImapPort).BeginInit();
-            this.grpCredentials.SuspendLayout();
-            this.grpMessage.SuspendLayout();
-            this.grpSecurity.SuspendLayout();
-            this.pnlButtons.SuspendLayout();
-            this.pnlHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dgvHistory).BeginInit();
-            this.SuspendLayout();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SenderConfigForm));
+            tabControl = new TabControl();
+            tabNumbers = new TabPage();
+            grpNumbersFile = new GroupBox();
+            lblNumbersFile = new Label();
+            txtNumbersFile = new TextBox();
+            btnBrowseNumbers = new Button();
+            lblNumberCount = new Label();
+            dgvNumbers = new DataGridView();
+            tabSchedule = new TabPage();
+            grpSchedule = new GroupBox();
+            lblDays = new Label();
+            flpDays = new FlowLayoutPanel();
+            grpTimeRange = new GroupBox();
+            lblMinTime = new Label();
+            tpMinTime = new DateTimePicker();
+            lblMaxTime = new Label();
+            tpMaxTime = new DateTimePicker();
+            grpNumbersPerEmail = new GroupBox();
+            lblNumbersPerEmail = new Label();
+            nudNumbersPerEmail = new NumericUpDown();
+            tabEmail = new TabPage();
+            grpSmtp = new GroupBox();
+            lblSmtpServer = new Label();
+            txtSmtpServer = new TextBox();
+            lblSmtpPort = new Label();
+            nudSmtpPort = new NumericUpDown();
+            chkSmtpSsl = new CheckBox();
+            grpImap = new GroupBox();
+            lblImapServer = new Label();
+            txtImapServer = new TextBox();
+            lblImapPort = new Label();
+            nudImapPort = new NumericUpDown();
+            chkImapSsl = new CheckBox();
+            grpCredentials = new GroupBox();
+            lblUsername = new Label();
+            txtUsername = new TextBox();
+            lblPassword = new Label();
+            txtPassword = new TextBox();
+            lblSenderDisplayName = new Label();
+            txtSenderDisplayName = new TextBox();
+            grpMessage = new GroupBox();
+            lblRecipients = new Label();
+            txtRecipients = new TextBox();
+            lblSubject = new Label();
+            txtSubject = new TextBox();
+            lblBodyTemplate = new Label();
+            txtBodyTemplate = new TextBox();
+            tabSecurity = new TabPage();
+            grpSecurity = new GroupBox();
+            lblHmacKey = new Label();
+            txtHmacKey = new TextBox();
+            pnlButtons = new Panel();
+            btnSaveConfig = new Button();
+            btnLoadConfig = new Button();
+            btnSchedule = new Button();
+            btnSendNow = new Button();
+            btnViewHistory = new Button();
+            pnlHistory = new Panel();
+            lblHistory = new Label();
+            dgvHistory = new DataGridView();
+            tabControl.SuspendLayout();
+            tabNumbers.SuspendLayout();
+            grpNumbersFile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvNumbers).BeginInit();
+            tabSchedule.SuspendLayout();
+            grpSchedule.SuspendLayout();
+            grpTimeRange.SuspendLayout();
+            grpNumbersPerEmail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudNumbersPerEmail).BeginInit();
+            tabEmail.SuspendLayout();
+            grpSmtp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudSmtpPort).BeginInit();
+            grpImap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudImapPort).BeginInit();
+            grpCredentials.SuspendLayout();
+            grpMessage.SuspendLayout();
+            tabSecurity.SuspendLayout();
+            grpSecurity.SuspendLayout();
+            pnlButtons.SuspendLayout();
+            pnlHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
+            SuspendLayout();
+            // 
             // tabControl
-            this.tabControl.Controls.Add(this.tabNumbers);
-            this.tabControl.Controls.Add(this.tabSchedule);
-            this.tabControl.Controls.Add(this.tabEmail);
-            this.tabControl.Controls.Add(this.tabSecurity);
-            this.tabControl.Dock = DockStyle.Fill;
-            this.tabControl.Location = new Point(0, 0);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new Size(900, 560);
-            this.tabControl.TabIndex = 0;
-
+            // 
+            tabControl.Controls.Add(tabNumbers);
+            tabControl.Controls.Add(tabSchedule);
+            tabControl.Controls.Add(tabEmail);
+            tabControl.Controls.Add(tabSecurity);
+            tabControl.Dock = DockStyle.Fill;
+            tabControl.Location = new Point(0, 0);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(900, 416);
+            tabControl.TabIndex = 0;
+            // 
             // tabNumbers
-            this.tabNumbers.Controls.Add(this.grpNumbersFile);
-            this.tabNumbers.Location = new Point(4, 24);
-            this.tabNumbers.Name = "tabNumbers";
-            this.tabNumbers.Size = new Size(892, 532);
-            this.tabNumbers.Text = "File Numeri";
-
+            // 
+            tabNumbers.Controls.Add(grpNumbersFile);
+            tabNumbers.Location = new Point(4, 24);
+            tabNumbers.Name = "tabNumbers";
+            tabNumbers.Size = new Size(892, 388);
+            tabNumbers.TabIndex = 0;
+            tabNumbers.Text = "File Numeri";
+            // 
             // grpNumbersFile
-            this.grpNumbersFile.Controls.Add(this.lblNumbersFile);
-            this.grpNumbersFile.Controls.Add(this.txtNumbersFile);
-            this.grpNumbersFile.Controls.Add(this.btnBrowseNumbers);
-            this.grpNumbersFile.Controls.Add(this.lblNumberCount);
-            this.grpNumbersFile.Controls.Add(this.dgvNumbers);
-            this.grpNumbersFile.Location = new Point(10, 10);
-            this.grpNumbersFile.Name = "grpNumbersFile";
-            this.grpNumbersFile.Size = new Size(870, 510);
-            this.grpNumbersFile.Text = "File Numeri di Telefono";
-            this.grpNumbersFile.TabIndex = 0;
-
+            // 
+            grpNumbersFile.Controls.Add(lblNumbersFile);
+            grpNumbersFile.Controls.Add(txtNumbersFile);
+            grpNumbersFile.Controls.Add(btnBrowseNumbers);
+            grpNumbersFile.Controls.Add(lblNumberCount);
+            grpNumbersFile.Controls.Add(dgvNumbers);
+            grpNumbersFile.Location = new Point(10, 10);
+            grpNumbersFile.Name = "grpNumbersFile";
+            grpNumbersFile.Size = new Size(870, 510);
+            grpNumbersFile.TabIndex = 0;
+            grpNumbersFile.TabStop = false;
+            grpNumbersFile.Text = "File Numeri di Telefono";
+            // 
             // lblNumbersFile
-            this.lblNumbersFile.AutoSize = true;
-            this.lblNumbersFile.Location = new Point(10, 25);
-            this.lblNumbersFile.Text = "File numeri:";
-
+            // 
+            lblNumbersFile.AutoSize = true;
+            lblNumbersFile.Location = new Point(10, 25);
+            lblNumbersFile.Name = "lblNumbersFile";
+            lblNumbersFile.Size = new Size(69, 15);
+            lblNumbersFile.TabIndex = 0;
+            lblNumbersFile.Text = "File numeri:";
+            // 
             // txtNumbersFile
-            this.txtNumbersFile.Location = new Point(100, 22);
-            this.txtNumbersFile.Name = "txtNumbersFile";
-            this.txtNumbersFile.ReadOnly = true;
-            this.txtNumbersFile.Size = new Size(650, 23);
-            this.txtNumbersFile.TabIndex = 0;
-
+            // 
+            txtNumbersFile.Location = new Point(100, 22);
+            txtNumbersFile.Name = "txtNumbersFile";
+            txtNumbersFile.ReadOnly = true;
+            txtNumbersFile.Size = new Size(650, 23);
+            txtNumbersFile.TabIndex = 0;
+            // 
             // btnBrowseNumbers
-            this.btnBrowseNumbers.Location = new Point(760, 21);
-            this.btnBrowseNumbers.Name = "btnBrowseNumbers";
-            this.btnBrowseNumbers.Size = new Size(90, 25);
-            this.btnBrowseNumbers.Text = "Sfoglia...";
-            this.btnBrowseNumbers.Click += new EventHandler(this.btnBrowseNumbers_Click);
-
+            // 
+            btnBrowseNumbers.Location = new Point(760, 21);
+            btnBrowseNumbers.Name = "btnBrowseNumbers";
+            btnBrowseNumbers.Size = new Size(90, 25);
+            btnBrowseNumbers.TabIndex = 1;
+            btnBrowseNumbers.Text = "Sfoglia...";
+            btnBrowseNumbers.Click += btnBrowseNumbers_Click;
+            // 
             // lblNumberCount
-            this.lblNumberCount.AutoSize = true;
-            this.lblNumberCount.Location = new Point(10, 55);
-            this.lblNumberCount.Name = "lblNumberCount";
-            this.lblNumberCount.Text = "Totale numeri: 0";
-
+            // 
+            lblNumberCount.AutoSize = true;
+            lblNumberCount.Location = new Point(10, 55);
+            lblNumberCount.Name = "lblNumberCount";
+            lblNumberCount.Size = new Size(91, 15);
+            lblNumberCount.TabIndex = 2;
+            lblNumberCount.Text = "Totale numeri: 0";
+            // 
             // dgvNumbers
-            this.dgvNumbers.AllowUserToAddRows = false;
-            this.dgvNumbers.AllowUserToDeleteRows = false;
-            this.dgvNumbers.Location = new Point(10, 80);
-            this.dgvNumbers.Name = "dgvNumbers";
-            this.dgvNumbers.ReadOnly = true;
-            this.dgvNumbers.Size = new Size(845, 400);
-            this.dgvNumbers.TabIndex = 1;
-            this.dgvNumbers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+            // 
+            dgvNumbers.AllowUserToAddRows = false;
+            dgvNumbers.AllowUserToDeleteRows = false;
+            dgvNumbers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvNumbers.Location = new Point(10, 80);
+            dgvNumbers.Name = "dgvNumbers";
+            dgvNumbers.ReadOnly = true;
+            dgvNumbers.Size = new Size(845, 400);
+            dgvNumbers.TabIndex = 1;
+            // 
             // tabSchedule
-            this.tabSchedule.Controls.Add(this.grpSchedule);
-            this.tabSchedule.Controls.Add(this.grpTimeRange);
-            this.tabSchedule.Controls.Add(this.grpNumbersPerEmail);
-            this.tabSchedule.Location = new Point(4, 24);
-            this.tabSchedule.Name = "tabSchedule";
-            this.tabSchedule.Size = new Size(892, 532);
-            this.tabSchedule.Text = "Schedulazione";
-
+            // 
+            tabSchedule.Controls.Add(grpSchedule);
+            tabSchedule.Controls.Add(grpTimeRange);
+            tabSchedule.Controls.Add(grpNumbersPerEmail);
+            tabSchedule.Location = new Point(4, 24);
+            tabSchedule.Name = "tabSchedule";
+            tabSchedule.Size = new Size(892, 532);
+            tabSchedule.TabIndex = 1;
+            tabSchedule.Text = "Schedulazione";
+            // 
             // grpSchedule
-            this.grpSchedule.Controls.Add(this.lblDays);
-            this.grpSchedule.Controls.Add(this.flpDays);
-            this.grpSchedule.Location = new Point(10, 10);
-            this.grpSchedule.Name = "grpSchedule";
-            this.grpSchedule.Size = new Size(870, 140);
-            this.grpSchedule.Text = "Giorni del Mese (1-28)";
-            this.grpSchedule.TabIndex = 0;
-
+            // 
+            grpSchedule.Controls.Add(lblDays);
+            grpSchedule.Controls.Add(flpDays);
+            grpSchedule.Location = new Point(10, 10);
+            grpSchedule.Name = "grpSchedule";
+            grpSchedule.Size = new Size(870, 140);
+            grpSchedule.TabIndex = 0;
+            grpSchedule.TabStop = false;
+            grpSchedule.Text = "Giorni del Mese (1-28)";
+            // 
             // lblDays
-            this.lblDays.AutoSize = true;
-            this.lblDays.Location = new Point(10, 20);
-            this.lblDays.Text = "Seleziona i giorni in cui inviare le email:";
-
+            // 
+            lblDays.AutoSize = true;
+            lblDays.Location = new Point(10, 20);
+            lblDays.Name = "lblDays";
+            lblDays.Size = new Size(213, 15);
+            lblDays.TabIndex = 0;
+            lblDays.Text = "Seleziona i giorni in cui inviare le email:";
+            // 
             // flpDays
-            this.flpDays.Location = new Point(10, 40);
-            this.flpDays.Name = "flpDays";
-            this.flpDays.Size = new Size(850, 85);
-            this.flpDays.TabIndex = 0;
-
+            // 
+            flpDays.Location = new Point(10, 40);
+            flpDays.Name = "flpDays";
+            flpDays.Size = new Size(850, 85);
+            flpDays.TabIndex = 0;
+            // 
             // grpTimeRange
-            this.grpTimeRange.Controls.Add(this.lblMinTime);
-            this.grpTimeRange.Controls.Add(this.tpMinTime);
-            this.grpTimeRange.Controls.Add(this.lblMaxTime);
-            this.grpTimeRange.Controls.Add(this.tpMaxTime);
-            this.grpTimeRange.Location = new Point(10, 160);
-            this.grpTimeRange.Name = "grpTimeRange";
-            this.grpTimeRange.Size = new Size(400, 90);
-            this.grpTimeRange.Text = "Range Orario";
-            this.grpTimeRange.TabIndex = 1;
-
+            // 
+            grpTimeRange.Controls.Add(lblMinTime);
+            grpTimeRange.Controls.Add(tpMinTime);
+            grpTimeRange.Controls.Add(lblMaxTime);
+            grpTimeRange.Controls.Add(tpMaxTime);
+            grpTimeRange.Location = new Point(10, 160);
+            grpTimeRange.Name = "grpTimeRange";
+            grpTimeRange.Size = new Size(400, 90);
+            grpTimeRange.TabIndex = 1;
+            grpTimeRange.TabStop = false;
+            grpTimeRange.Text = "Range Orario";
+            // 
             // lblMinTime
-            this.lblMinTime.AutoSize = true;
-            this.lblMinTime.Location = new Point(10, 28);
-            this.lblMinTime.Text = "Orario minimo:";
-
+            // 
+            lblMinTime.AutoSize = true;
+            lblMinTime.Location = new Point(10, 28);
+            lblMinTime.Name = "lblMinTime";
+            lblMinTime.Size = new Size(88, 15);
+            lblMinTime.TabIndex = 0;
+            lblMinTime.Text = "Orario minimo:";
+            // 
             // tpMinTime
-            this.tpMinTime.Format = DateTimePickerFormat.Time;
-            this.tpMinTime.Location = new Point(120, 25);
-            this.tpMinTime.Name = "tpMinTime";
-            this.tpMinTime.ShowUpDown = true;
-            this.tpMinTime.Size = new Size(100, 23);
-            this.tpMinTime.Value = DateTime.Today.AddHours(8);
-
+            // 
+            tpMinTime.Format = DateTimePickerFormat.Time;
+            tpMinTime.Location = new Point(120, 25);
+            tpMinTime.Name = "tpMinTime";
+            tpMinTime.ShowUpDown = true;
+            tpMinTime.Size = new Size(100, 23);
+            tpMinTime.TabIndex = 1;
+            tpMinTime.Value = new DateTime(2026, 4, 1, 8, 0, 0, 0);
+            // 
             // lblMaxTime
-            this.lblMaxTime.AutoSize = true;
-            this.lblMaxTime.Location = new Point(10, 58);
-            this.lblMaxTime.Text = "Orario massimo:";
-
+            // 
+            lblMaxTime.AutoSize = true;
+            lblMaxTime.Location = new Point(10, 58);
+            lblMaxTime.Name = "lblMaxTime";
+            lblMaxTime.Size = new Size(94, 15);
+            lblMaxTime.TabIndex = 2;
+            lblMaxTime.Text = "Orario massimo:";
+            // 
             // tpMaxTime
-            this.tpMaxTime.Format = DateTimePickerFormat.Time;
-            this.tpMaxTime.Location = new Point(120, 55);
-            this.tpMaxTime.Name = "tpMaxTime";
-            this.tpMaxTime.ShowUpDown = true;
-            this.tpMaxTime.Size = new Size(100, 23);
-            this.tpMaxTime.Value = DateTime.Today.AddHours(17);
-
+            // 
+            tpMaxTime.Format = DateTimePickerFormat.Time;
+            tpMaxTime.Location = new Point(120, 55);
+            tpMaxTime.Name = "tpMaxTime";
+            tpMaxTime.ShowUpDown = true;
+            tpMaxTime.Size = new Size(100, 23);
+            tpMaxTime.TabIndex = 3;
+            tpMaxTime.Value = new DateTime(2026, 4, 1, 17, 0, 0, 0);
+            // 
             // grpNumbersPerEmail
-            this.grpNumbersPerEmail.Controls.Add(this.lblNumbersPerEmail);
-            this.grpNumbersPerEmail.Controls.Add(this.nudNumbersPerEmail);
-            this.grpNumbersPerEmail.Location = new Point(420, 160);
-            this.grpNumbersPerEmail.Name = "grpNumbersPerEmail";
-            this.grpNumbersPerEmail.Size = new Size(300, 90);
-            this.grpNumbersPerEmail.Text = "Numeri per Email";
-            this.grpNumbersPerEmail.TabIndex = 2;
-
+            // 
+            grpNumbersPerEmail.Controls.Add(lblNumbersPerEmail);
+            grpNumbersPerEmail.Controls.Add(nudNumbersPerEmail);
+            grpNumbersPerEmail.Location = new Point(420, 160);
+            grpNumbersPerEmail.Name = "grpNumbersPerEmail";
+            grpNumbersPerEmail.Size = new Size(300, 90);
+            grpNumbersPerEmail.TabIndex = 2;
+            grpNumbersPerEmail.TabStop = false;
+            grpNumbersPerEmail.Text = "Numeri per Email";
+            // 
             // lblNumbersPerEmail
-            this.lblNumbersPerEmail.AutoSize = true;
-            this.lblNumbersPerEmail.Location = new Point(10, 35);
-            this.lblNumbersPerEmail.Text = "Numeri da inviare:";
-
+            // 
+            lblNumbersPerEmail.AutoSize = true;
+            lblNumbersPerEmail.Location = new Point(10, 35);
+            lblNumbersPerEmail.Name = "lblNumbersPerEmail";
+            lblNumbersPerEmail.Size = new Size(104, 15);
+            lblNumbersPerEmail.TabIndex = 0;
+            lblNumbersPerEmail.Text = "Numeri da inviare:";
+            // 
             // nudNumbersPerEmail
-            this.nudNumbersPerEmail.Location = new Point(130, 32);
-            this.nudNumbersPerEmail.Minimum = 2;
-            this.nudNumbersPerEmail.Maximum = 50;
-            this.nudNumbersPerEmail.Value = 10;
-            this.nudNumbersPerEmail.Name = "nudNumbersPerEmail";
-            this.nudNumbersPerEmail.Size = new Size(80, 23);
-
+            // 
+            nudNumbersPerEmail.Location = new Point(130, 32);
+            nudNumbersPerEmail.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
+            nudNumbersPerEmail.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
+            nudNumbersPerEmail.Name = "nudNumbersPerEmail";
+            nudNumbersPerEmail.Size = new Size(80, 23);
+            nudNumbersPerEmail.TabIndex = 1;
+            nudNumbersPerEmail.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            // 
             // tabEmail
-            this.tabEmail.Controls.Add(this.grpSmtp);
-            this.tabEmail.Controls.Add(this.grpImap);
-            this.tabEmail.Controls.Add(this.grpCredentials);
-            this.tabEmail.Controls.Add(this.grpMessage);
-            this.tabEmail.Location = new Point(4, 24);
-            this.tabEmail.Name = "tabEmail";
-            this.tabEmail.Size = new Size(892, 532);
-            this.tabEmail.Text = "Email";
-
+            // 
+            tabEmail.Controls.Add(grpSmtp);
+            tabEmail.Controls.Add(grpImap);
+            tabEmail.Controls.Add(grpCredentials);
+            tabEmail.Controls.Add(grpMessage);
+            tabEmail.Location = new Point(4, 24);
+            tabEmail.Name = "tabEmail";
+            tabEmail.Size = new Size(892, 532);
+            tabEmail.TabIndex = 2;
+            tabEmail.Text = "Email";
+            // 
             // grpSmtp
-            this.grpSmtp.Controls.Add(this.lblSmtpServer);
-            this.grpSmtp.Controls.Add(this.txtSmtpServer);
-            this.grpSmtp.Controls.Add(this.lblSmtpPort);
-            this.grpSmtp.Controls.Add(this.nudSmtpPort);
-            this.grpSmtp.Controls.Add(this.chkSmtpSsl);
-            this.grpSmtp.Location = new Point(10, 10);
-            this.grpSmtp.Name = "grpSmtp";
-            this.grpSmtp.Size = new Size(420, 100);
-            this.grpSmtp.Text = "Server SMTP (Invio)";
-            this.grpSmtp.TabIndex = 0;
-
+            // 
+            grpSmtp.Controls.Add(lblSmtpServer);
+            grpSmtp.Controls.Add(txtSmtpServer);
+            grpSmtp.Controls.Add(lblSmtpPort);
+            grpSmtp.Controls.Add(nudSmtpPort);
+            grpSmtp.Controls.Add(chkSmtpSsl);
+            grpSmtp.Location = new Point(10, 10);
+            grpSmtp.Name = "grpSmtp";
+            grpSmtp.Size = new Size(420, 100);
+            grpSmtp.TabIndex = 0;
+            grpSmtp.TabStop = false;
+            grpSmtp.Text = "Server SMTP (Invio)";
+            // 
             // lblSmtpServer
-            this.lblSmtpServer.AutoSize = true;
-            this.lblSmtpServer.Location = new Point(10, 28);
-            this.lblSmtpServer.Text = "Server:";
-
+            // 
+            lblSmtpServer.AutoSize = true;
+            lblSmtpServer.Location = new Point(10, 28);
+            lblSmtpServer.Name = "lblSmtpServer";
+            lblSmtpServer.Size = new Size(42, 15);
+            lblSmtpServer.TabIndex = 0;
+            lblSmtpServer.Text = "Server:";
+            // 
             // txtSmtpServer
-            this.txtSmtpServer.Location = new Point(70, 25);
-            this.txtSmtpServer.Name = "txtSmtpServer";
-            this.txtSmtpServer.Size = new Size(200, 23);
-
+            // 
+            txtSmtpServer.Location = new Point(70, 25);
+            txtSmtpServer.Name = "txtSmtpServer";
+            txtSmtpServer.Size = new Size(200, 23);
+            txtSmtpServer.TabIndex = 1;
+            // 
             // lblSmtpPort
-            this.lblSmtpPort.AutoSize = true;
-            this.lblSmtpPort.Location = new Point(280, 28);
-            this.lblSmtpPort.Text = "Porta:";
-
+            // 
+            lblSmtpPort.AutoSize = true;
+            lblSmtpPort.Location = new Point(280, 28);
+            lblSmtpPort.Name = "lblSmtpPort";
+            lblSmtpPort.Size = new Size(38, 15);
+            lblSmtpPort.TabIndex = 2;
+            lblSmtpPort.Text = "Porta:";
+            // 
             // nudSmtpPort
-            this.nudSmtpPort.Location = new Point(320, 25);
-            this.nudSmtpPort.Maximum = 65535;
-            this.nudSmtpPort.Minimum = 1;
-            this.nudSmtpPort.Value = 587;
-            this.nudSmtpPort.Name = "nudSmtpPort";
-            this.nudSmtpPort.Size = new Size(80, 23);
-
+            // 
+            nudSmtpPort.Location = new Point(320, 25);
+            nudSmtpPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            nudSmtpPort.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudSmtpPort.Name = "nudSmtpPort";
+            nudSmtpPort.Size = new Size(80, 23);
+            nudSmtpPort.TabIndex = 3;
+            nudSmtpPort.Value = new decimal(new int[] { 587, 0, 0, 0 });
+            // 
             // chkSmtpSsl
-            this.chkSmtpSsl.AutoSize = true;
-            this.chkSmtpSsl.Checked = true;
-            this.chkSmtpSsl.Location = new Point(10, 60);
-            this.chkSmtpSsl.Name = "chkSmtpSsl";
-            this.chkSmtpSsl.Text = "Usa SSL/TLS";
-
+            // 
+            chkSmtpSsl.AutoSize = true;
+            chkSmtpSsl.Checked = true;
+            chkSmtpSsl.CheckState = CheckState.Checked;
+            chkSmtpSsl.Location = new Point(10, 60);
+            chkSmtpSsl.Name = "chkSmtpSsl";
+            chkSmtpSsl.Size = new Size(89, 19);
+            chkSmtpSsl.TabIndex = 4;
+            chkSmtpSsl.Text = "Usa SSL/TLS";
+            // 
             // grpImap
-            this.grpImap.Controls.Add(this.lblImapServer);
-            this.grpImap.Controls.Add(this.txtImapServer);
-            this.grpImap.Controls.Add(this.lblImapPort);
-            this.grpImap.Controls.Add(this.nudImapPort);
-            this.grpImap.Controls.Add(this.chkImapSsl);
-            this.grpImap.Location = new Point(440, 10);
-            this.grpImap.Name = "grpImap";
-            this.grpImap.Size = new Size(440, 100);
-            this.grpImap.Text = "Server IMAP (Cartella Inviati)";
-            this.grpImap.TabIndex = 1;
-
+            // 
+            grpImap.Controls.Add(lblImapServer);
+            grpImap.Controls.Add(txtImapServer);
+            grpImap.Controls.Add(lblImapPort);
+            grpImap.Controls.Add(nudImapPort);
+            grpImap.Controls.Add(chkImapSsl);
+            grpImap.Location = new Point(440, 10);
+            grpImap.Name = "grpImap";
+            grpImap.Size = new Size(440, 100);
+            grpImap.TabIndex = 1;
+            grpImap.TabStop = false;
+            grpImap.Text = "Server IMAP (Cartella Inviati)";
+            // 
             // lblImapServer
-            this.lblImapServer.AutoSize = true;
-            this.lblImapServer.Location = new Point(10, 28);
-            this.lblImapServer.Text = "Server:";
-
+            // 
+            lblImapServer.AutoSize = true;
+            lblImapServer.Location = new Point(10, 28);
+            lblImapServer.Name = "lblImapServer";
+            lblImapServer.Size = new Size(42, 15);
+            lblImapServer.TabIndex = 0;
+            lblImapServer.Text = "Server:";
+            // 
             // txtImapServer
-            this.txtImapServer.Location = new Point(70, 25);
-            this.txtImapServer.Name = "txtImapServer";
-            this.txtImapServer.Size = new Size(200, 23);
-
+            // 
+            txtImapServer.Location = new Point(70, 25);
+            txtImapServer.Name = "txtImapServer";
+            txtImapServer.Size = new Size(200, 23);
+            txtImapServer.TabIndex = 1;
+            // 
             // lblImapPort
-            this.lblImapPort.AutoSize = true;
-            this.lblImapPort.Location = new Point(280, 28);
-            this.lblImapPort.Text = "Porta:";
-
+            // 
+            lblImapPort.AutoSize = true;
+            lblImapPort.Location = new Point(280, 28);
+            lblImapPort.Name = "lblImapPort";
+            lblImapPort.Size = new Size(38, 15);
+            lblImapPort.TabIndex = 2;
+            lblImapPort.Text = "Porta:";
+            // 
             // nudImapPort
-            this.nudImapPort.Location = new Point(320, 25);
-            this.nudImapPort.Maximum = 65535;
-            this.nudImapPort.Minimum = 1;
-            this.nudImapPort.Value = 993;
-            this.nudImapPort.Name = "nudImapPort";
-            this.nudImapPort.Size = new Size(80, 23);
-
+            // 
+            nudImapPort.Location = new Point(320, 25);
+            nudImapPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            nudImapPort.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudImapPort.Name = "nudImapPort";
+            nudImapPort.Size = new Size(80, 23);
+            nudImapPort.TabIndex = 3;
+            nudImapPort.Value = new decimal(new int[] { 993, 0, 0, 0 });
+            // 
             // chkImapSsl
-            this.chkImapSsl.AutoSize = true;
-            this.chkImapSsl.Checked = true;
-            this.chkImapSsl.Location = new Point(10, 60);
-            this.chkImapSsl.Name = "chkImapSsl";
-            this.chkImapSsl.Text = "Usa SSL";
-
+            // 
+            chkImapSsl.AutoSize = true;
+            chkImapSsl.Checked = true;
+            chkImapSsl.CheckState = CheckState.Checked;
+            chkImapSsl.Location = new Point(10, 60);
+            chkImapSsl.Name = "chkImapSsl";
+            chkImapSsl.Size = new Size(66, 19);
+            chkImapSsl.TabIndex = 4;
+            chkImapSsl.Text = "Usa SSL";
+            // 
             // grpCredentials
-            this.grpCredentials.Controls.Add(this.lblUsername);
-            this.grpCredentials.Controls.Add(this.txtUsername);
-            this.grpCredentials.Controls.Add(this.lblPassword);
-            this.grpCredentials.Controls.Add(this.txtPassword);
-            this.grpCredentials.Controls.Add(this.lblSenderDisplayName);
-            this.grpCredentials.Controls.Add(this.txtSenderDisplayName);
-            this.grpCredentials.Location = new Point(10, 120);
-            this.grpCredentials.Name = "grpCredentials";
-            this.grpCredentials.Size = new Size(870, 100);
-            this.grpCredentials.Text = "Credenziali";
-            this.grpCredentials.TabIndex = 2;
-
+            // 
+            grpCredentials.Controls.Add(lblUsername);
+            grpCredentials.Controls.Add(txtUsername);
+            grpCredentials.Controls.Add(lblPassword);
+            grpCredentials.Controls.Add(txtPassword);
+            grpCredentials.Controls.Add(lblSenderDisplayName);
+            grpCredentials.Controls.Add(txtSenderDisplayName);
+            grpCredentials.Location = new Point(10, 120);
+            grpCredentials.Name = "grpCredentials";
+            grpCredentials.Size = new Size(870, 100);
+            grpCredentials.TabIndex = 2;
+            grpCredentials.TabStop = false;
+            grpCredentials.Text = "Credenziali";
+            // 
             // lblUsername
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new Point(10, 30);
-            this.lblUsername.Text = "Username:";
-
+            // 
+            lblUsername.AutoSize = true;
+            lblUsername.Location = new Point(10, 30);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(63, 15);
+            lblUsername.TabIndex = 0;
+            lblUsername.Text = "Username:";
+            // 
             // txtUsername
-            this.txtUsername.Location = new Point(80, 27);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new Size(230, 23);
-
+            // 
+            txtUsername.Location = new Point(80, 27);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(230, 23);
+            txtUsername.TabIndex = 1;
+            // 
             // lblPassword
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new Point(330, 30);
-            this.lblPassword.Text = "Password:";
-
+            // 
+            lblPassword.AutoSize = true;
+            lblPassword.Location = new Point(330, 30);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(60, 15);
+            lblPassword.TabIndex = 2;
+            lblPassword.Text = "Password:";
+            // 
             // txtPassword
-            this.txtPassword.Location = new Point(400, 27);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '●';
-            this.txtPassword.Size = new Size(200, 23);
-
+            // 
+            txtPassword.Location = new Point(400, 27);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '●';
+            txtPassword.Size = new Size(200, 23);
+            txtPassword.TabIndex = 3;
+            // 
             // lblSenderDisplayName
-            this.lblSenderDisplayName.AutoSize = true;
-            this.lblSenderDisplayName.Location = new Point(10, 62);
-            this.lblSenderDisplayName.Text = "Nome mittente:";
-
+            // 
+            lblSenderDisplayName.AutoSize = true;
+            lblSenderDisplayName.Location = new Point(10, 62);
+            lblSenderDisplayName.Name = "lblSenderDisplayName";
+            lblSenderDisplayName.Size = new Size(91, 15);
+            lblSenderDisplayName.TabIndex = 4;
+            lblSenderDisplayName.Text = "Nome mittente:";
+            // 
             // txtSenderDisplayName
-            this.txtSenderDisplayName.Location = new Point(110, 59);
-            this.txtSenderDisplayName.Name = "txtSenderDisplayName";
-            this.txtSenderDisplayName.Size = new Size(250, 23);
-
+            // 
+            txtSenderDisplayName.Location = new Point(110, 59);
+            txtSenderDisplayName.Name = "txtSenderDisplayName";
+            txtSenderDisplayName.Size = new Size(250, 23);
+            txtSenderDisplayName.TabIndex = 5;
+            // 
             // grpMessage
-            this.grpMessage.Controls.Add(this.lblRecipients);
-            this.grpMessage.Controls.Add(this.txtRecipients);
-            this.grpMessage.Controls.Add(this.lblSubject);
-            this.grpMessage.Controls.Add(this.txtSubject);
-            this.grpMessage.Controls.Add(this.lblBodyTemplate);
-            this.grpMessage.Controls.Add(this.txtBodyTemplate);
-            this.grpMessage.Location = new Point(10, 230);
-            this.grpMessage.Name = "grpMessage";
-            this.grpMessage.Size = new Size(870, 290);
-            this.grpMessage.Text = "Messaggio";
-            this.grpMessage.TabIndex = 3;
-
+            // 
+            grpMessage.Controls.Add(lblRecipients);
+            grpMessage.Controls.Add(txtRecipients);
+            grpMessage.Controls.Add(lblSubject);
+            grpMessage.Controls.Add(txtSubject);
+            grpMessage.Controls.Add(lblBodyTemplate);
+            grpMessage.Controls.Add(txtBodyTemplate);
+            grpMessage.Location = new Point(10, 230);
+            grpMessage.Name = "grpMessage";
+            grpMessage.Size = new Size(870, 290);
+            grpMessage.TabIndex = 3;
+            grpMessage.TabStop = false;
+            grpMessage.Text = "Messaggio";
+            // 
             // lblRecipients
-            this.lblRecipients.AutoSize = true;
-            this.lblRecipients.Location = new Point(10, 28);
-            this.lblRecipients.Text = "Destinatari (;):";
-
+            // 
+            lblRecipients.AutoSize = true;
+            lblRecipients.Location = new Point(10, 28);
+            lblRecipients.Name = "lblRecipients";
+            lblRecipients.Size = new Size(80, 15);
+            lblRecipients.TabIndex = 0;
+            lblRecipients.Text = "Destinatari (;):";
+            // 
             // txtRecipients
-            this.txtRecipients.Location = new Point(120, 25);
-            this.txtRecipients.Name = "txtRecipients";
-            this.txtRecipients.Size = new Size(730, 23);
-
+            // 
+            txtRecipients.Location = new Point(120, 25);
+            txtRecipients.Name = "txtRecipients";
+            txtRecipients.Size = new Size(730, 23);
+            txtRecipients.TabIndex = 1;
+            // 
             // lblSubject
-            this.lblSubject.AutoSize = true;
-            this.lblSubject.Location = new Point(10, 60);
-            this.lblSubject.Text = "Oggetto:";
-
+            // 
+            lblSubject.AutoSize = true;
+            lblSubject.Location = new Point(10, 60);
+            lblSubject.Name = "lblSubject";
+            lblSubject.Size = new Size(54, 15);
+            lblSubject.TabIndex = 2;
+            lblSubject.Text = "Oggetto:";
+            // 
             // txtSubject
-            this.txtSubject.Location = new Point(120, 57);
-            this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new Size(730, 23);
-
+            // 
+            txtSubject.Location = new Point(120, 57);
+            txtSubject.Name = "txtSubject";
+            txtSubject.Size = new Size(730, 23);
+            txtSubject.TabIndex = 3;
+            // 
             // lblBodyTemplate
-            this.lblBodyTemplate.AutoSize = true;
-            this.lblBodyTemplate.Location = new Point(10, 92);
-            this.lblBodyTemplate.Text = "Corpo email (usa <numbers>):";
-
+            // 
+            lblBodyTemplate.AutoSize = true;
+            lblBodyTemplate.Location = new Point(10, 92);
+            lblBodyTemplate.Name = "lblBodyTemplate";
+            lblBodyTemplate.Size = new Size(170, 15);
+            lblBodyTemplate.TabIndex = 4;
+            lblBodyTemplate.Text = "Corpo email (usa <numbers>):";
+            // 
             // txtBodyTemplate
-            this.txtBodyTemplate.Location = new Point(10, 115);
-            this.txtBodyTemplate.Multiline = true;
-            this.txtBodyTemplate.Name = "txtBodyTemplate";
-            this.txtBodyTemplate.ScrollBars = ScrollBars.Vertical;
-            this.txtBodyTemplate.Size = new Size(840, 155);
-            this.txtBodyTemplate.Text = "Gentile cliente,\r\n\r\ndi seguito i numeri di telefono da verificare:\r\n\r\n<numbers>\r\n\r\nCordiali saluti";
-
+            // 
+            txtBodyTemplate.Location = new Point(10, 115);
+            txtBodyTemplate.Multiline = true;
+            txtBodyTemplate.Name = "txtBodyTemplate";
+            txtBodyTemplate.ScrollBars = ScrollBars.Vertical;
+            txtBodyTemplate.Size = new Size(840, 155);
+            txtBodyTemplate.TabIndex = 5;
+            txtBodyTemplate.Text = "Gentile cliente,\r\n\r\ndi seguito i numeri di telefono da verificare:\r\n\r\n<numbers>\r\n\r\nCordiali saluti";
+            // 
             // tabSecurity
-            this.tabSecurity.Controls.Add(this.grpSecurity);
-            this.tabSecurity.Location = new Point(4, 24);
-            this.tabSecurity.Name = "tabSecurity";
-            this.tabSecurity.Size = new Size(892, 532);
-            this.tabSecurity.Text = "Sicurezza";
-
+            // 
+            tabSecurity.Controls.Add(grpSecurity);
+            tabSecurity.Location = new Point(4, 24);
+            tabSecurity.Name = "tabSecurity";
+            tabSecurity.Size = new Size(892, 532);
+            tabSecurity.TabIndex = 3;
+            tabSecurity.Text = "Sicurezza";
+            // 
             // grpSecurity
-            this.grpSecurity.Controls.Add(this.lblHmacKey);
-            this.grpSecurity.Controls.Add(this.txtHmacKey);
-            this.grpSecurity.Location = new Point(10, 10);
-            this.grpSecurity.Name = "grpSecurity";
-            this.grpSecurity.Size = new Size(870, 80);
-            this.grpSecurity.Text = "Chiave HMAC Condivisa";
-            this.grpSecurity.TabIndex = 0;
-
+            // 
+            grpSecurity.Controls.Add(lblHmacKey);
+            grpSecurity.Controls.Add(txtHmacKey);
+            grpSecurity.Location = new Point(10, 10);
+            grpSecurity.Name = "grpSecurity";
+            grpSecurity.Size = new Size(870, 80);
+            grpSecurity.TabIndex = 0;
+            grpSecurity.TabStop = false;
+            grpSecurity.Text = "Chiave HMAC Condivisa";
+            // 
             // lblHmacKey
-            this.lblHmacKey.AutoSize = true;
-            this.lblHmacKey.Location = new Point(10, 30);
-            this.lblHmacKey.Text = "Chiave condivisa:";
-
+            // 
+            lblHmacKey.AutoSize = true;
+            lblHmacKey.Location = new Point(10, 30);
+            lblHmacKey.Name = "lblHmacKey";
+            lblHmacKey.Size = new Size(99, 15);
+            lblHmacKey.TabIndex = 0;
+            lblHmacKey.Text = "Chiave condivisa:";
+            // 
             // txtHmacKey
-            this.txtHmacKey.Location = new Point(130, 27);
-            this.txtHmacKey.Name = "txtHmacKey";
-            this.txtHmacKey.Size = new Size(400, 23);
-
+            // 
+            txtHmacKey.Location = new Point(130, 27);
+            txtHmacKey.Name = "txtHmacKey";
+            txtHmacKey.Size = new Size(400, 23);
+            txtHmacKey.TabIndex = 1;
+            // 
             // pnlButtons
-            this.pnlButtons.Controls.Add(this.btnSaveConfig);
-            this.pnlButtons.Controls.Add(this.btnLoadConfig);
-            this.pnlButtons.Controls.Add(this.btnSchedule);
-            this.pnlButtons.Controls.Add(this.btnSendNow);
-            this.pnlButtons.Controls.Add(this.btnViewHistory);
-            this.pnlButtons.Dock = DockStyle.Bottom;
-            this.pnlButtons.Location = new Point(0, 560);
-            this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new Size(900, 45);
-            this.pnlButtons.TabIndex = 1;
-
+            // 
+            pnlButtons.Controls.Add(btnSaveConfig);
+            pnlButtons.Controls.Add(btnLoadConfig);
+            pnlButtons.Controls.Add(btnSchedule);
+            pnlButtons.Controls.Add(btnSendNow);
+            pnlButtons.Controls.Add(btnViewHistory);
+            pnlButtons.Dock = DockStyle.Bottom;
+            pnlButtons.Location = new Point(0, 416);
+            pnlButtons.Name = "pnlButtons";
+            pnlButtons.Size = new Size(900, 45);
+            pnlButtons.TabIndex = 1;
+            // 
             // btnSaveConfig
-            this.btnSaveConfig.Location = new Point(10, 10);
-            this.btnSaveConfig.Name = "btnSaveConfig";
-            this.btnSaveConfig.Size = new Size(150, 28);
-            this.btnSaveConfig.Text = "Salva Configurazione";
-            this.btnSaveConfig.Click += new EventHandler(this.btnSaveConfig_Click);
-
+            // 
+            btnSaveConfig.Location = new Point(10, 10);
+            btnSaveConfig.Name = "btnSaveConfig";
+            btnSaveConfig.Size = new Size(150, 28);
+            btnSaveConfig.TabIndex = 0;
+            btnSaveConfig.Text = "Salva Configurazione";
+            btnSaveConfig.Click += btnSaveConfig_Click;
+            // 
             // btnLoadConfig
-            this.btnLoadConfig.Location = new Point(170, 10);
-            this.btnLoadConfig.Name = "btnLoadConfig";
-            this.btnLoadConfig.Size = new Size(150, 28);
-            this.btnLoadConfig.Text = "Carica Configurazione";
-            this.btnLoadConfig.Click += new EventHandler(this.btnLoadConfig_Click);
-
+            // 
+            btnLoadConfig.Location = new Point(170, 10);
+            btnLoadConfig.Name = "btnLoadConfig";
+            btnLoadConfig.Size = new Size(150, 28);
+            btnLoadConfig.TabIndex = 1;
+            btnLoadConfig.Text = "Carica Configurazione";
+            btnLoadConfig.Click += btnLoadConfig_Click;
+            // 
             // btnSchedule
-            this.btnSchedule.Location = new Point(330, 10);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new Size(150, 28);
-            this.btnSchedule.Text = "Pianifica in Windows";
-            this.btnSchedule.Click += new EventHandler(this.btnSchedule_Click);
-
+            // 
+            btnSchedule.Location = new Point(330, 10);
+            btnSchedule.Name = "btnSchedule";
+            btnSchedule.Size = new Size(150, 28);
+            btnSchedule.TabIndex = 2;
+            btnSchedule.Text = "Pianifica in Windows";
+            btnSchedule.Click += btnSchedule_Click;
+            // 
             // btnSendNow
-            this.btnSendNow.Location = new Point(490, 10);
-            this.btnSendNow.Name = "btnSendNow";
-            this.btnSendNow.Size = new Size(100, 28);
-            this.btnSendNow.Text = "Invia Ora";
-            this.btnSendNow.BackColor = Color.FromArgb(0, 120, 215);
-            this.btnSendNow.ForeColor = Color.White;
-            this.btnSendNow.Click += new EventHandler(this.btnSendNow_Click);
-
+            // 
+            btnSendNow.BackColor = Color.FromArgb(0, 120, 215);
+            btnSendNow.ForeColor = Color.White;
+            btnSendNow.Location = new Point(490, 10);
+            btnSendNow.Name = "btnSendNow";
+            btnSendNow.Size = new Size(100, 28);
+            btnSendNow.TabIndex = 3;
+            btnSendNow.Text = "Invia Ora";
+            btnSendNow.UseVisualStyleBackColor = false;
+            btnSendNow.Click += btnSendNow_Click;
+            // 
             // btnViewHistory
-            this.btnViewHistory.Location = new Point(600, 10);
-            this.btnViewHistory.Name = "btnViewHistory";
-            this.btnViewHistory.Size = new Size(130, 28);
-            this.btnViewHistory.Text = "Visualizza Storico";
-            this.btnViewHistory.Click += new EventHandler(this.btnViewHistory_Click);
-
+            // 
+            btnViewHistory.Location = new Point(600, 10);
+            btnViewHistory.Name = "btnViewHistory";
+            btnViewHistory.Size = new Size(130, 28);
+            btnViewHistory.TabIndex = 4;
+            btnViewHistory.Text = "Visualizza Storico";
+            btnViewHistory.Click += btnViewHistory_Click;
+            // 
             // pnlHistory
-            this.pnlHistory.Controls.Add(this.lblHistory);
-            this.pnlHistory.Controls.Add(this.dgvHistory);
-            this.pnlHistory.Dock = DockStyle.Bottom;
-            this.pnlHistory.Location = new Point(0, 605);
-            this.pnlHistory.Name = "pnlHistory";
-            this.pnlHistory.Size = new Size(900, 200);
-            this.pnlHistory.Visible = false;
-            this.pnlHistory.TabIndex = 2;
-
+            // 
+            pnlHistory.Controls.Add(lblHistory);
+            pnlHistory.Controls.Add(dgvHistory);
+            pnlHistory.Dock = DockStyle.Bottom;
+            pnlHistory.Location = new Point(0, 461);
+            pnlHistory.Name = "pnlHistory";
+            pnlHistory.Size = new Size(900, 200);
+            pnlHistory.TabIndex = 2;
+            pnlHistory.Visible = false;
+            // 
             // lblHistory
-            this.lblHistory.AutoSize = true;
-            this.lblHistory.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblHistory.Location = new Point(5, 5);
-            this.lblHistory.Text = "Storico Invii";
-
+            // 
+            lblHistory.AutoSize = true;
+            lblHistory.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblHistory.Location = new Point(5, 5);
+            lblHistory.Name = "lblHistory";
+            lblHistory.Size = new Size(74, 15);
+            lblHistory.TabIndex = 0;
+            lblHistory.Text = "Storico Invii";
+            // 
             // dgvHistory
-            this.dgvHistory.AllowUserToAddRows = false;
-            this.dgvHistory.AllowUserToDeleteRows = false;
-            this.dgvHistory.Location = new Point(5, 25);
-            this.dgvHistory.Name = "dgvHistory";
-            this.dgvHistory.ReadOnly = true;
-            this.dgvHistory.Size = new Size(885, 165);
-            this.dgvHistory.TabIndex = 0;
-            this.dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+            // 
+            dgvHistory.AllowUserToAddRows = false;
+            dgvHistory.AllowUserToDeleteRows = false;
+            dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHistory.Location = new Point(5, 25);
+            dgvHistory.Name = "dgvHistory";
+            dgvHistory.ReadOnly = true;
+            dgvHistory.Size = new Size(885, 165);
+            dgvHistory.TabIndex = 0;
+            // 
             // SenderConfigForm
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(900, 650);
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.pnlButtons);
-            this.Controls.Add(this.pnlHistory);
-            this.Font = new Font("Segoe UI", 9F);
-            this.MinimumSize = new Size(916, 700);
-            this.Name = "SenderConfigForm";
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "AutoCons - Configurazione Sender";
-
-            this.tabControl.ResumeLayout(false);
-            this.tabNumbers.ResumeLayout(false);
-            this.tabSchedule.ResumeLayout(false);
-            this.tabEmail.ResumeLayout(false);
-            this.tabSecurity.ResumeLayout(false);
-            this.grpNumbersFile.ResumeLayout(false);
-            this.grpNumbersFile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dgvNumbers).EndInit();
-            this.grpSchedule.ResumeLayout(false);
-            this.grpSchedule.PerformLayout();
-            this.grpTimeRange.ResumeLayout(false);
-            this.grpTimeRange.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudNumbersPerEmail).EndInit();
-            this.grpSmtp.ResumeLayout(false);
-            this.grpSmtp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudSmtpPort).EndInit();
-            this.grpImap.ResumeLayout(false);
-            this.grpImap.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudImapPort).EndInit();
-            this.grpCredentials.ResumeLayout(false);
-            this.grpCredentials.PerformLayout();
-            this.grpMessage.ResumeLayout(false);
-            this.grpMessage.PerformLayout();
-            this.grpSecurity.ResumeLayout(false);
-            this.grpSecurity.PerformLayout();
-            this.pnlButtons.ResumeLayout(false);
-            this.pnlHistory.ResumeLayout(false);
-            this.pnlHistory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dgvHistory).EndInit();
-            this.ResumeLayout(false);
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(900, 661);
+            Controls.Add(tabControl);
+            Controls.Add(pnlButtons);
+            Controls.Add(pnlHistory);
+            Font = new Font("Segoe UI", 9F);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(916, 700);
+            Name = "SenderConfigForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "AutoCons - Configurazione Sender";
+            tabControl.ResumeLayout(false);
+            tabNumbers.ResumeLayout(false);
+            grpNumbersFile.ResumeLayout(false);
+            grpNumbersFile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvNumbers).EndInit();
+            tabSchedule.ResumeLayout(false);
+            grpSchedule.ResumeLayout(false);
+            grpSchedule.PerformLayout();
+            grpTimeRange.ResumeLayout(false);
+            grpTimeRange.PerformLayout();
+            grpNumbersPerEmail.ResumeLayout(false);
+            grpNumbersPerEmail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudNumbersPerEmail).EndInit();
+            tabEmail.ResumeLayout(false);
+            grpSmtp.ResumeLayout(false);
+            grpSmtp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudSmtpPort).EndInit();
+            grpImap.ResumeLayout(false);
+            grpImap.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudImapPort).EndInit();
+            grpCredentials.ResumeLayout(false);
+            grpCredentials.PerformLayout();
+            grpMessage.ResumeLayout(false);
+            grpMessage.PerformLayout();
+            tabSecurity.ResumeLayout(false);
+            grpSecurity.ResumeLayout(false);
+            grpSecurity.PerformLayout();
+            pnlButtons.ResumeLayout(false);
+            pnlHistory.ResumeLayout(false);
+            pnlHistory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

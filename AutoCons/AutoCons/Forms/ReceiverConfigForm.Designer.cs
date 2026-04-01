@@ -15,606 +15,758 @@ namespace AutoCons.Forms
 
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-
-            this.tabControl = new TabControl();
-            this.tabImap = new TabPage();
-            this.tabSmtp = new TabPage();
-            this.tabCsv = new TabPage();
-            this.tabReply = new TabPage();
-            this.tabSecurity = new TabPage();
-
-            // IMAP tab controls
-            this.grpImap = new GroupBox();
-            this.lblImapServer = new Label();
-            this.txtImapServer = new TextBox();
-            this.lblImapPort = new Label();
-            this.nudImapPort = new NumericUpDown();
-            this.chkImapSsl = new CheckBox();
-            this.lblImapUsername = new Label();
-            this.txtImapUsername = new TextBox();
-            this.lblImapPassword = new Label();
-            this.txtImapPassword = new TextBox();
-            this.grpSchedule = new GroupBox();
-            this.lblCheckTime = new Label();
-            this.tpCheckTime = new DateTimePicker();
-            this.grpMonitor = new GroupBox();
-            this.lblMonitoredSender = new Label();
-            this.txtMonitoredSender = new TextBox();
-
-            // SMTP tab controls
-            this.grpSmtp = new GroupBox();
-            this.lblSmtpServer = new Label();
-            this.txtSmtpServer = new TextBox();
-            this.lblSmtpPort = new Label();
-            this.nudSmtpPort = new NumericUpDown();
-            this.chkSmtpSsl = new CheckBox();
-            this.lblSmtpUsername = new Label();
-            this.txtSmtpUsername = new TextBox();
-            this.lblSmtpPassword = new Label();
-            this.txtSmtpPassword = new TextBox();
-            this.lblSenderDisplayName = new Label();
-            this.txtSenderDisplayName = new TextBox();
-            this.grpSentImap = new GroupBox();
-            this.lblSentImapServer = new Label();
-            this.txtSentImapServer = new TextBox();
-            this.lblSentImapPort = new Label();
-            this.nudSentImapPort = new NumericUpDown();
-            this.chkSentImapSsl = new CheckBox();
-
-            // CSV tab controls
-            this.grpCsvFile = new GroupBox();
-            this.lblCsvFile = new Label();
-            this.txtCsvFile = new TextBox();
-            this.btnBrowseCsv = new Button();
-            this.lblPhoneColumn = new Label();
-            this.cmbPhoneColumn = new ComboBox();
-            this.lblCsvInfo = new Label();
-            this.dgvCsvPreview = new DataGridView();
-
-            // Reply tab controls
-            this.grpReply = new GroupBox();
-            this.lblReplyTemplate = new Label();
-            this.txtReplyTemplate = new TextBox();
-
-            // Security tab controls
-            this.grpSecurity = new GroupBox();
-            this.lblHmacKey = new Label();
-            this.txtHmacKey = new TextBox();
-
-            // Buttons and history
-            this.pnlButtons = new Panel();
-            this.btnSaveConfig = new Button();
-            this.btnLoadConfig = new Button();
-            this.btnSchedule = new Button();
-            this.btnCheckNow = new Button();
-            this.btnViewHistory = new Button();
-
-            this.pnlHistory = new Panel();
-            this.lblHistory = new Label();
-            this.dgvHistory = new DataGridView();
-
-            this.tabControl.SuspendLayout();
-            this.tabImap.SuspendLayout();
-            this.tabSmtp.SuspendLayout();
-            this.tabCsv.SuspendLayout();
-            this.tabReply.SuspendLayout();
-            this.tabSecurity.SuspendLayout();
-            this.grpImap.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudImapPort).BeginInit();
-            this.grpSchedule.SuspendLayout();
-            this.grpMonitor.SuspendLayout();
-            this.grpSmtp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudSmtpPort).BeginInit();
-            this.grpSentImap.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudSentImapPort).BeginInit();
-            this.grpCsvFile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dgvCsvPreview).BeginInit();
-            this.grpReply.SuspendLayout();
-            this.grpSecurity.SuspendLayout();
-            this.pnlButtons.SuspendLayout();
-            this.pnlHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dgvHistory).BeginInit();
-            this.SuspendLayout();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiverConfigForm));
+            tabControl = new TabControl();
+            tabImap = new TabPage();
+            grpImap = new GroupBox();
+            lblImapServer = new Label();
+            txtImapServer = new TextBox();
+            lblImapPort = new Label();
+            nudImapPort = new NumericUpDown();
+            chkImapSsl = new CheckBox();
+            lblImapUsername = new Label();
+            txtImapUsername = new TextBox();
+            lblImapPassword = new Label();
+            txtImapPassword = new TextBox();
+            grpMonitor = new GroupBox();
+            lblMonitoredSender = new Label();
+            txtMonitoredSender = new TextBox();
+            grpSchedule = new GroupBox();
+            lblCheckTime = new Label();
+            tpCheckTime = new DateTimePicker();
+            tabSmtp = new TabPage();
+            grpSmtp = new GroupBox();
+            lblSmtpServer = new Label();
+            txtSmtpServer = new TextBox();
+            lblSmtpPort = new Label();
+            nudSmtpPort = new NumericUpDown();
+            chkSmtpSsl = new CheckBox();
+            lblSmtpUsername = new Label();
+            txtSmtpUsername = new TextBox();
+            lblSmtpPassword = new Label();
+            txtSmtpPassword = new TextBox();
+            lblSenderDisplayName = new Label();
+            txtSenderDisplayName = new TextBox();
+            grpSentImap = new GroupBox();
+            lblSentImapServer = new Label();
+            txtSentImapServer = new TextBox();
+            lblSentImapPort = new Label();
+            nudSentImapPort = new NumericUpDown();
+            chkSentImapSsl = new CheckBox();
+            tabCsv = new TabPage();
+            grpCsvFile = new GroupBox();
+            lblCsvFile = new Label();
+            txtCsvFile = new TextBox();
+            btnBrowseCsv = new Button();
+            lblPhoneColumn = new Label();
+            cmbPhoneColumn = new ComboBox();
+            lblCsvInfo = new Label();
+            dgvCsvPreview = new DataGridView();
+            tabReply = new TabPage();
+            grpReply = new GroupBox();
+            lblReplyTemplate = new Label();
+            txtReplyTemplate = new TextBox();
+            tabSecurity = new TabPage();
+            grpSecurity = new GroupBox();
+            lblHmacKey = new Label();
+            txtHmacKey = new TextBox();
+            pnlButtons = new Panel();
+            btnSaveConfig = new Button();
+            btnLoadConfig = new Button();
+            btnSchedule = new Button();
+            btnCheckNow = new Button();
+            btnViewHistory = new Button();
+            pnlHistory = new Panel();
+            lblHistory = new Label();
+            dgvHistory = new DataGridView();
+            tabControl.SuspendLayout();
+            tabImap.SuspendLayout();
+            grpImap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudImapPort).BeginInit();
+            grpMonitor.SuspendLayout();
+            grpSchedule.SuspendLayout();
+            tabSmtp.SuspendLayout();
+            grpSmtp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudSmtpPort).BeginInit();
+            grpSentImap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudSentImapPort).BeginInit();
+            tabCsv.SuspendLayout();
+            grpCsvFile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCsvPreview).BeginInit();
+            tabReply.SuspendLayout();
+            grpReply.SuspendLayout();
+            tabSecurity.SuspendLayout();
+            grpSecurity.SuspendLayout();
+            pnlButtons.SuspendLayout();
+            pnlHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
+            SuspendLayout();
+            // 
             // tabControl
-            this.tabControl.Controls.Add(this.tabImap);
-            this.tabControl.Controls.Add(this.tabSmtp);
-            this.tabControl.Controls.Add(this.tabCsv);
-            this.tabControl.Controls.Add(this.tabReply);
-            this.tabControl.Controls.Add(this.tabSecurity);
-            this.tabControl.Dock = DockStyle.Fill;
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new Size(900, 560);
-            this.tabControl.TabIndex = 0;
-
-            // === TAB IMAP ===
-            this.tabImap.Controls.Add(this.grpImap);
-            this.tabImap.Controls.Add(this.grpMonitor);
-            this.tabImap.Controls.Add(this.grpSchedule);
-            this.tabImap.Location = new Point(4, 24);
-            this.tabImap.Name = "tabImap";
-            this.tabImap.Size = new Size(892, 532);
-            this.tabImap.Text = "IMAP Ricezione";
-
+            // 
+            tabControl.Controls.Add(tabImap);
+            tabControl.Controls.Add(tabSmtp);
+            tabControl.Controls.Add(tabCsv);
+            tabControl.Controls.Add(tabReply);
+            tabControl.Controls.Add(tabSecurity);
+            tabControl.Dock = DockStyle.Fill;
+            tabControl.Location = new Point(0, 0);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(900, 416);
+            tabControl.TabIndex = 0;
+            // 
+            // tabImap
+            // 
+            tabImap.Controls.Add(grpImap);
+            tabImap.Controls.Add(grpMonitor);
+            tabImap.Controls.Add(grpSchedule);
+            tabImap.Location = new Point(4, 24);
+            tabImap.Name = "tabImap";
+            tabImap.Size = new Size(892, 388);
+            tabImap.TabIndex = 0;
+            tabImap.Text = "IMAP Ricezione";
+            // 
             // grpImap
-            this.grpImap.Controls.Add(this.lblImapServer);
-            this.grpImap.Controls.Add(this.txtImapServer);
-            this.grpImap.Controls.Add(this.lblImapPort);
-            this.grpImap.Controls.Add(this.nudImapPort);
-            this.grpImap.Controls.Add(this.chkImapSsl);
-            this.grpImap.Controls.Add(this.lblImapUsername);
-            this.grpImap.Controls.Add(this.txtImapUsername);
-            this.grpImap.Controls.Add(this.lblImapPassword);
-            this.grpImap.Controls.Add(this.txtImapPassword);
-            this.grpImap.Location = new Point(10, 10);
-            this.grpImap.Name = "grpImap";
-            this.grpImap.Size = new Size(870, 140);
-            this.grpImap.Text = "Server IMAP (Ricezione Email)";
-            this.grpImap.TabIndex = 0;
-
+            // 
+            grpImap.Controls.Add(lblImapServer);
+            grpImap.Controls.Add(txtImapServer);
+            grpImap.Controls.Add(lblImapPort);
+            grpImap.Controls.Add(nudImapPort);
+            grpImap.Controls.Add(chkImapSsl);
+            grpImap.Controls.Add(lblImapUsername);
+            grpImap.Controls.Add(txtImapUsername);
+            grpImap.Controls.Add(lblImapPassword);
+            grpImap.Controls.Add(txtImapPassword);
+            grpImap.Location = new Point(10, 10);
+            grpImap.Name = "grpImap";
+            grpImap.Size = new Size(870, 140);
+            grpImap.TabIndex = 0;
+            grpImap.TabStop = false;
+            grpImap.Text = "Server IMAP (Ricezione Email)";
+            // 
             // lblImapServer
-            this.lblImapServer.AutoSize = true;
-            this.lblImapServer.Location = new Point(10, 28);
-            this.lblImapServer.Text = "Server:";
-
+            // 
+            lblImapServer.AutoSize = true;
+            lblImapServer.Location = new Point(10, 28);
+            lblImapServer.Name = "lblImapServer";
+            lblImapServer.Size = new Size(42, 15);
+            lblImapServer.TabIndex = 0;
+            lblImapServer.Text = "Server:";
+            // 
             // txtImapServer
-            this.txtImapServer.Location = new Point(80, 25);
-            this.txtImapServer.Name = "txtImapServer";
-            this.txtImapServer.Size = new Size(230, 23);
-
+            // 
+            txtImapServer.Location = new Point(80, 25);
+            txtImapServer.Name = "txtImapServer";
+            txtImapServer.Size = new Size(230, 23);
+            txtImapServer.TabIndex = 1;
+            // 
             // lblImapPort
-            this.lblImapPort.AutoSize = true;
-            this.lblImapPort.Location = new Point(325, 28);
-            this.lblImapPort.Text = "Porta:";
-
+            // 
+            lblImapPort.AutoSize = true;
+            lblImapPort.Location = new Point(325, 28);
+            lblImapPort.Name = "lblImapPort";
+            lblImapPort.Size = new Size(38, 15);
+            lblImapPort.TabIndex = 2;
+            lblImapPort.Text = "Porta:";
+            // 
             // nudImapPort
-            this.nudImapPort.Location = new Point(370, 25);
-            this.nudImapPort.Maximum = 65535;
-            this.nudImapPort.Minimum = 1;
-            this.nudImapPort.Value = 993;
-            this.nudImapPort.Name = "nudImapPort";
-            this.nudImapPort.Size = new Size(80, 23);
-
+            // 
+            nudImapPort.Location = new Point(370, 25);
+            nudImapPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            nudImapPort.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudImapPort.Name = "nudImapPort";
+            nudImapPort.Size = new Size(80, 23);
+            nudImapPort.TabIndex = 3;
+            nudImapPort.Value = new decimal(new int[] { 993, 0, 0, 0 });
+            // 
             // chkImapSsl
-            this.chkImapSsl.AutoSize = true;
-            this.chkImapSsl.Checked = true;
-            this.chkImapSsl.Location = new Point(460, 27);
-            this.chkImapSsl.Name = "chkImapSsl";
-            this.chkImapSsl.Text = "Usa SSL";
-
+            // 
+            chkImapSsl.AutoSize = true;
+            chkImapSsl.Checked = true;
+            chkImapSsl.CheckState = CheckState.Checked;
+            chkImapSsl.Location = new Point(460, 27);
+            chkImapSsl.Name = "chkImapSsl";
+            chkImapSsl.Size = new Size(66, 19);
+            chkImapSsl.TabIndex = 4;
+            chkImapSsl.Text = "Usa SSL";
+            // 
             // lblImapUsername
-            this.lblImapUsername.AutoSize = true;
-            this.lblImapUsername.Location = new Point(10, 62);
-            this.lblImapUsername.Text = "Username:";
-
+            // 
+            lblImapUsername.AutoSize = true;
+            lblImapUsername.Location = new Point(10, 62);
+            lblImapUsername.Name = "lblImapUsername";
+            lblImapUsername.Size = new Size(63, 15);
+            lblImapUsername.TabIndex = 5;
+            lblImapUsername.Text = "Username:";
+            // 
             // txtImapUsername
-            this.txtImapUsername.Location = new Point(80, 59);
-            this.txtImapUsername.Name = "txtImapUsername";
-            this.txtImapUsername.Size = new Size(230, 23);
-
+            // 
+            txtImapUsername.Location = new Point(80, 59);
+            txtImapUsername.Name = "txtImapUsername";
+            txtImapUsername.Size = new Size(230, 23);
+            txtImapUsername.TabIndex = 6;
+            // 
             // lblImapPassword
-            this.lblImapPassword.AutoSize = true;
-            this.lblImapPassword.Location = new Point(10, 96);
-            this.lblImapPassword.Text = "Password:";
-
+            // 
+            lblImapPassword.AutoSize = true;
+            lblImapPassword.Location = new Point(10, 96);
+            lblImapPassword.Name = "lblImapPassword";
+            lblImapPassword.Size = new Size(60, 15);
+            lblImapPassword.TabIndex = 7;
+            lblImapPassword.Text = "Password:";
+            // 
             // txtImapPassword
-            this.txtImapPassword.Location = new Point(80, 93);
-            this.txtImapPassword.Name = "txtImapPassword";
-            this.txtImapPassword.PasswordChar = '●';
-            this.txtImapPassword.Size = new Size(230, 23);
-
+            // 
+            txtImapPassword.Location = new Point(80, 93);
+            txtImapPassword.Name = "txtImapPassword";
+            txtImapPassword.PasswordChar = '●';
+            txtImapPassword.Size = new Size(230, 23);
+            txtImapPassword.TabIndex = 8;
+            // 
             // grpMonitor
-            this.grpMonitor.Controls.Add(this.lblMonitoredSender);
-            this.grpMonitor.Controls.Add(this.txtMonitoredSender);
-            this.grpMonitor.Location = new Point(10, 160);
-            this.grpMonitor.Name = "grpMonitor";
-            this.grpMonitor.Size = new Size(870, 70);
-            this.grpMonitor.Text = "Filtro Mittente";
-            this.grpMonitor.TabIndex = 1;
-
+            // 
+            grpMonitor.Controls.Add(lblMonitoredSender);
+            grpMonitor.Controls.Add(txtMonitoredSender);
+            grpMonitor.Location = new Point(10, 160);
+            grpMonitor.Name = "grpMonitor";
+            grpMonitor.Size = new Size(870, 70);
+            grpMonitor.TabIndex = 1;
+            grpMonitor.TabStop = false;
+            grpMonitor.Text = "Filtro Mittente";
+            // 
             // lblMonitoredSender
-            this.lblMonitoredSender.AutoSize = true;
-            this.lblMonitoredSender.Location = new Point(10, 30);
-            this.lblMonitoredSender.Text = "Email mittente monitorato:";
-
+            // 
+            lblMonitoredSender.AutoSize = true;
+            lblMonitoredSender.Location = new Point(10, 30);
+            lblMonitoredSender.Name = "lblMonitoredSender";
+            lblMonitoredSender.Size = new Size(150, 15);
+            lblMonitoredSender.TabIndex = 0;
+            lblMonitoredSender.Text = "Email mittente monitorato:";
+            // 
             // txtMonitoredSender
-            this.txtMonitoredSender.Location = new Point(185, 27);
-            this.txtMonitoredSender.Name = "txtMonitoredSender";
-            this.txtMonitoredSender.Size = new Size(300, 23);
-
+            // 
+            txtMonitoredSender.Location = new Point(185, 27);
+            txtMonitoredSender.Name = "txtMonitoredSender";
+            txtMonitoredSender.Size = new Size(300, 23);
+            txtMonitoredSender.TabIndex = 1;
+            // 
             // grpSchedule
-            this.grpSchedule.Controls.Add(this.lblCheckTime);
-            this.grpSchedule.Controls.Add(this.tpCheckTime);
-            this.grpSchedule.Location = new Point(10, 240);
-            this.grpSchedule.Name = "grpSchedule";
-            this.grpSchedule.Size = new Size(870, 70);
-            this.grpSchedule.Text = "Schedulazione Giornaliera";
-            this.grpSchedule.TabIndex = 2;
-
+            // 
+            grpSchedule.Controls.Add(lblCheckTime);
+            grpSchedule.Controls.Add(tpCheckTime);
+            grpSchedule.Location = new Point(10, 240);
+            grpSchedule.Name = "grpSchedule";
+            grpSchedule.Size = new Size(870, 70);
+            grpSchedule.TabIndex = 2;
+            grpSchedule.TabStop = false;
+            grpSchedule.Text = "Schedulazione Giornaliera";
+            // 
             // lblCheckTime
-            this.lblCheckTime.AutoSize = true;
-            this.lblCheckTime.Location = new Point(10, 30);
-            this.lblCheckTime.Text = "Orario controllo giornaliero:";
-
+            // 
+            lblCheckTime.AutoSize = true;
+            lblCheckTime.Location = new Point(10, 30);
+            lblCheckTime.Name = "lblCheckTime";
+            lblCheckTime.Size = new Size(154, 15);
+            lblCheckTime.TabIndex = 0;
+            lblCheckTime.Text = "Orario controllo giornaliero:";
+            // 
             // tpCheckTime
-            this.tpCheckTime.Format = DateTimePickerFormat.Time;
-            this.tpCheckTime.Location = new Point(200, 27);
-            this.tpCheckTime.Name = "tpCheckTime";
-            this.tpCheckTime.ShowUpDown = true;
-            this.tpCheckTime.Size = new Size(100, 23);
-            this.tpCheckTime.Value = DateTime.Today.AddHours(18).AddMinutes(15);
-
-            // === TAB SMTP ===
-            this.tabSmtp.Controls.Add(this.grpSmtp);
-            this.tabSmtp.Controls.Add(this.grpSentImap);
-            this.tabSmtp.Location = new Point(4, 24);
-            this.tabSmtp.Name = "tabSmtp";
-            this.tabSmtp.Size = new Size(892, 532);
-            this.tabSmtp.Text = "SMTP Risposta";
-
+            // 
+            tpCheckTime.Format = DateTimePickerFormat.Time;
+            tpCheckTime.Location = new Point(200, 27);
+            tpCheckTime.Name = "tpCheckTime";
+            tpCheckTime.ShowUpDown = true;
+            tpCheckTime.Size = new Size(100, 23);
+            tpCheckTime.TabIndex = 1;
+            tpCheckTime.Value = new DateTime(2026, 4, 1, 18, 15, 0, 0);
+            // 
+            // tabSmtp
+            // 
+            tabSmtp.Controls.Add(grpSmtp);
+            tabSmtp.Controls.Add(grpSentImap);
+            tabSmtp.Location = new Point(4, 24);
+            tabSmtp.Name = "tabSmtp";
+            tabSmtp.Size = new Size(892, 388);
+            tabSmtp.TabIndex = 1;
+            tabSmtp.Text = "SMTP Risposta";
+            // 
             // grpSmtp
-            this.grpSmtp.Controls.Add(this.lblSmtpServer);
-            this.grpSmtp.Controls.Add(this.txtSmtpServer);
-            this.grpSmtp.Controls.Add(this.lblSmtpPort);
-            this.grpSmtp.Controls.Add(this.nudSmtpPort);
-            this.grpSmtp.Controls.Add(this.chkSmtpSsl);
-            this.grpSmtp.Controls.Add(this.lblSmtpUsername);
-            this.grpSmtp.Controls.Add(this.txtSmtpUsername);
-            this.grpSmtp.Controls.Add(this.lblSmtpPassword);
-            this.grpSmtp.Controls.Add(this.txtSmtpPassword);
-            this.grpSmtp.Controls.Add(this.lblSenderDisplayName);
-            this.grpSmtp.Controls.Add(this.txtSenderDisplayName);
-            this.grpSmtp.Location = new Point(10, 10);
-            this.grpSmtp.Name = "grpSmtp";
-            this.grpSmtp.Size = new Size(870, 170);
-            this.grpSmtp.Text = "Server SMTP (Invio Risposta)";
-            this.grpSmtp.TabIndex = 0;
-
+            // 
+            grpSmtp.Controls.Add(lblSmtpServer);
+            grpSmtp.Controls.Add(txtSmtpServer);
+            grpSmtp.Controls.Add(lblSmtpPort);
+            grpSmtp.Controls.Add(nudSmtpPort);
+            grpSmtp.Controls.Add(chkSmtpSsl);
+            grpSmtp.Controls.Add(lblSmtpUsername);
+            grpSmtp.Controls.Add(txtSmtpUsername);
+            grpSmtp.Controls.Add(lblSmtpPassword);
+            grpSmtp.Controls.Add(txtSmtpPassword);
+            grpSmtp.Controls.Add(lblSenderDisplayName);
+            grpSmtp.Controls.Add(txtSenderDisplayName);
+            grpSmtp.Location = new Point(10, 10);
+            grpSmtp.Name = "grpSmtp";
+            grpSmtp.Size = new Size(870, 170);
+            grpSmtp.TabIndex = 0;
+            grpSmtp.TabStop = false;
+            grpSmtp.Text = "Server SMTP (Invio Risposta)";
+            // 
             // lblSmtpServer
-            this.lblSmtpServer.AutoSize = true;
-            this.lblSmtpServer.Location = new Point(10, 28);
-            this.lblSmtpServer.Text = "Server:";
-
+            // 
+            lblSmtpServer.AutoSize = true;
+            lblSmtpServer.Location = new Point(10, 28);
+            lblSmtpServer.Name = "lblSmtpServer";
+            lblSmtpServer.Size = new Size(42, 15);
+            lblSmtpServer.TabIndex = 0;
+            lblSmtpServer.Text = "Server:";
+            // 
             // txtSmtpServer
-            this.txtSmtpServer.Location = new Point(80, 25);
-            this.txtSmtpServer.Name = "txtSmtpServer";
-            this.txtSmtpServer.Size = new Size(230, 23);
-
+            // 
+            txtSmtpServer.Location = new Point(80, 25);
+            txtSmtpServer.Name = "txtSmtpServer";
+            txtSmtpServer.Size = new Size(230, 23);
+            txtSmtpServer.TabIndex = 1;
+            // 
             // lblSmtpPort
-            this.lblSmtpPort.AutoSize = true;
-            this.lblSmtpPort.Location = new Point(325, 28);
-            this.lblSmtpPort.Text = "Porta:";
-
+            // 
+            lblSmtpPort.AutoSize = true;
+            lblSmtpPort.Location = new Point(325, 28);
+            lblSmtpPort.Name = "lblSmtpPort";
+            lblSmtpPort.Size = new Size(38, 15);
+            lblSmtpPort.TabIndex = 2;
+            lblSmtpPort.Text = "Porta:";
+            // 
             // nudSmtpPort
-            this.nudSmtpPort.Location = new Point(370, 25);
-            this.nudSmtpPort.Maximum = 65535;
-            this.nudSmtpPort.Minimum = 1;
-            this.nudSmtpPort.Value = 587;
-            this.nudSmtpPort.Name = "nudSmtpPort";
-            this.nudSmtpPort.Size = new Size(80, 23);
-
+            // 
+            nudSmtpPort.Location = new Point(370, 25);
+            nudSmtpPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            nudSmtpPort.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudSmtpPort.Name = "nudSmtpPort";
+            nudSmtpPort.Size = new Size(80, 23);
+            nudSmtpPort.TabIndex = 3;
+            nudSmtpPort.Value = new decimal(new int[] { 587, 0, 0, 0 });
+            // 
             // chkSmtpSsl
-            this.chkSmtpSsl.AutoSize = true;
-            this.chkSmtpSsl.Checked = true;
-            this.chkSmtpSsl.Location = new Point(460, 27);
-            this.chkSmtpSsl.Name = "chkSmtpSsl";
-            this.chkSmtpSsl.Text = "Usa SSL/TLS";
-
+            // 
+            chkSmtpSsl.AutoSize = true;
+            chkSmtpSsl.Checked = true;
+            chkSmtpSsl.CheckState = CheckState.Checked;
+            chkSmtpSsl.Location = new Point(460, 27);
+            chkSmtpSsl.Name = "chkSmtpSsl";
+            chkSmtpSsl.Size = new Size(89, 19);
+            chkSmtpSsl.TabIndex = 4;
+            chkSmtpSsl.Text = "Usa SSL/TLS";
+            // 
             // lblSmtpUsername
-            this.lblSmtpUsername.AutoSize = true;
-            this.lblSmtpUsername.Location = new Point(10, 62);
-            this.lblSmtpUsername.Text = "Username:";
-
+            // 
+            lblSmtpUsername.AutoSize = true;
+            lblSmtpUsername.Location = new Point(10, 62);
+            lblSmtpUsername.Name = "lblSmtpUsername";
+            lblSmtpUsername.Size = new Size(63, 15);
+            lblSmtpUsername.TabIndex = 5;
+            lblSmtpUsername.Text = "Username:";
+            // 
             // txtSmtpUsername
-            this.txtSmtpUsername.Location = new Point(80, 59);
-            this.txtSmtpUsername.Name = "txtSmtpUsername";
-            this.txtSmtpUsername.Size = new Size(230, 23);
-
+            // 
+            txtSmtpUsername.Location = new Point(80, 59);
+            txtSmtpUsername.Name = "txtSmtpUsername";
+            txtSmtpUsername.Size = new Size(230, 23);
+            txtSmtpUsername.TabIndex = 6;
+            // 
             // lblSmtpPassword
-            this.lblSmtpPassword.AutoSize = true;
-            this.lblSmtpPassword.Location = new Point(10, 96);
-            this.lblSmtpPassword.Text = "Password:";
-
+            // 
+            lblSmtpPassword.AutoSize = true;
+            lblSmtpPassword.Location = new Point(10, 96);
+            lblSmtpPassword.Name = "lblSmtpPassword";
+            lblSmtpPassword.Size = new Size(60, 15);
+            lblSmtpPassword.TabIndex = 7;
+            lblSmtpPassword.Text = "Password:";
+            // 
             // txtSmtpPassword
-            this.txtSmtpPassword.Location = new Point(80, 93);
-            this.txtSmtpPassword.Name = "txtSmtpPassword";
-            this.txtSmtpPassword.PasswordChar = '●';
-            this.txtSmtpPassword.Size = new Size(230, 23);
-
+            // 
+            txtSmtpPassword.Location = new Point(80, 93);
+            txtSmtpPassword.Name = "txtSmtpPassword";
+            txtSmtpPassword.PasswordChar = '●';
+            txtSmtpPassword.Size = new Size(230, 23);
+            txtSmtpPassword.TabIndex = 8;
+            // 
             // lblSenderDisplayName
-            this.lblSenderDisplayName.AutoSize = true;
-            this.lblSenderDisplayName.Location = new Point(10, 130);
-            this.lblSenderDisplayName.Text = "Nome mittente:";
-
+            // 
+            lblSenderDisplayName.AutoSize = true;
+            lblSenderDisplayName.Location = new Point(10, 130);
+            lblSenderDisplayName.Name = "lblSenderDisplayName";
+            lblSenderDisplayName.Size = new Size(91, 15);
+            lblSenderDisplayName.TabIndex = 9;
+            lblSenderDisplayName.Text = "Nome mittente:";
+            // 
             // txtSenderDisplayName
-            this.txtSenderDisplayName.Location = new Point(110, 127);
-            this.txtSenderDisplayName.Name = "txtSenderDisplayName";
-            this.txtSenderDisplayName.Size = new Size(250, 23);
-
+            // 
+            txtSenderDisplayName.Location = new Point(110, 127);
+            txtSenderDisplayName.Name = "txtSenderDisplayName";
+            txtSenderDisplayName.Size = new Size(250, 23);
+            txtSenderDisplayName.TabIndex = 10;
+            // 
             // grpSentImap
-            this.grpSentImap.Controls.Add(this.lblSentImapServer);
-            this.grpSentImap.Controls.Add(this.txtSentImapServer);
-            this.grpSentImap.Controls.Add(this.lblSentImapPort);
-            this.grpSentImap.Controls.Add(this.nudSentImapPort);
-            this.grpSentImap.Controls.Add(this.chkSentImapSsl);
-            this.grpSentImap.Location = new Point(10, 190);
-            this.grpSentImap.Name = "grpSentImap";
-            this.grpSentImap.Size = new Size(870, 80);
-            this.grpSentImap.Text = "IMAP per Salvataggio Risposte Inviate";
-            this.grpSentImap.TabIndex = 1;
-
+            // 
+            grpSentImap.Controls.Add(lblSentImapServer);
+            grpSentImap.Controls.Add(txtSentImapServer);
+            grpSentImap.Controls.Add(lblSentImapPort);
+            grpSentImap.Controls.Add(nudSentImapPort);
+            grpSentImap.Controls.Add(chkSentImapSsl);
+            grpSentImap.Location = new Point(10, 190);
+            grpSentImap.Name = "grpSentImap";
+            grpSentImap.Size = new Size(870, 80);
+            grpSentImap.TabIndex = 1;
+            grpSentImap.TabStop = false;
+            grpSentImap.Text = "IMAP per Salvataggio Risposte Inviate";
+            // 
             // lblSentImapServer
-            this.lblSentImapServer.AutoSize = true;
-            this.lblSentImapServer.Location = new Point(10, 30);
-            this.lblSentImapServer.Text = "Server:";
-
+            // 
+            lblSentImapServer.AutoSize = true;
+            lblSentImapServer.Location = new Point(10, 30);
+            lblSentImapServer.Name = "lblSentImapServer";
+            lblSentImapServer.Size = new Size(42, 15);
+            lblSentImapServer.TabIndex = 0;
+            lblSentImapServer.Text = "Server:";
+            // 
             // txtSentImapServer
-            this.txtSentImapServer.Location = new Point(80, 27);
-            this.txtSentImapServer.Name = "txtSentImapServer";
-            this.txtSentImapServer.Size = new Size(230, 23);
-
+            // 
+            txtSentImapServer.Location = new Point(80, 27);
+            txtSentImapServer.Name = "txtSentImapServer";
+            txtSentImapServer.Size = new Size(230, 23);
+            txtSentImapServer.TabIndex = 1;
+            // 
             // lblSentImapPort
-            this.lblSentImapPort.AutoSize = true;
-            this.lblSentImapPort.Location = new Point(325, 30);
-            this.lblSentImapPort.Text = "Porta:";
-
+            // 
+            lblSentImapPort.AutoSize = true;
+            lblSentImapPort.Location = new Point(325, 30);
+            lblSentImapPort.Name = "lblSentImapPort";
+            lblSentImapPort.Size = new Size(38, 15);
+            lblSentImapPort.TabIndex = 2;
+            lblSentImapPort.Text = "Porta:";
+            // 
             // nudSentImapPort
-            this.nudSentImapPort.Location = new Point(370, 27);
-            this.nudSentImapPort.Maximum = 65535;
-            this.nudSentImapPort.Minimum = 1;
-            this.nudSentImapPort.Value = 993;
-            this.nudSentImapPort.Name = "nudSentImapPort";
-            this.nudSentImapPort.Size = new Size(80, 23);
-
+            // 
+            nudSentImapPort.Location = new Point(370, 27);
+            nudSentImapPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            nudSentImapPort.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudSentImapPort.Name = "nudSentImapPort";
+            nudSentImapPort.Size = new Size(80, 23);
+            nudSentImapPort.TabIndex = 3;
+            nudSentImapPort.Value = new decimal(new int[] { 993, 0, 0, 0 });
+            // 
             // chkSentImapSsl
-            this.chkSentImapSsl.AutoSize = true;
-            this.chkSentImapSsl.Checked = true;
-            this.chkSentImapSsl.Location = new Point(460, 30);
-            this.chkSentImapSsl.Name = "chkSentImapSsl";
-            this.chkSentImapSsl.Text = "Usa SSL";
-
-            // === TAB CSV ===
-            this.tabCsv.Controls.Add(this.grpCsvFile);
-            this.tabCsv.Location = new Point(4, 24);
-            this.tabCsv.Name = "tabCsv";
-            this.tabCsv.Size = new Size(892, 532);
-            this.tabCsv.Text = "File CSV Consensi";
-
+            // 
+            chkSentImapSsl.AutoSize = true;
+            chkSentImapSsl.Checked = true;
+            chkSentImapSsl.CheckState = CheckState.Checked;
+            chkSentImapSsl.Location = new Point(460, 30);
+            chkSentImapSsl.Name = "chkSentImapSsl";
+            chkSentImapSsl.Size = new Size(66, 19);
+            chkSentImapSsl.TabIndex = 4;
+            chkSentImapSsl.Text = "Usa SSL";
+            // 
+            // tabCsv
+            // 
+            tabCsv.Controls.Add(grpCsvFile);
+            tabCsv.Location = new Point(4, 24);
+            tabCsv.Name = "tabCsv";
+            tabCsv.Size = new Size(892, 388);
+            tabCsv.TabIndex = 2;
+            tabCsv.Text = "File CSV Consensi";
+            // 
             // grpCsvFile
-            this.grpCsvFile.Controls.Add(this.lblCsvFile);
-            this.grpCsvFile.Controls.Add(this.txtCsvFile);
-            this.grpCsvFile.Controls.Add(this.btnBrowseCsv);
-            this.grpCsvFile.Controls.Add(this.lblPhoneColumn);
-            this.grpCsvFile.Controls.Add(this.cmbPhoneColumn);
-            this.grpCsvFile.Controls.Add(this.lblCsvInfo);
-            this.grpCsvFile.Controls.Add(this.dgvCsvPreview);
-            this.grpCsvFile.Location = new Point(10, 10);
-            this.grpCsvFile.Name = "grpCsvFile";
-            this.grpCsvFile.Size = new Size(870, 510);
-            this.grpCsvFile.Text = "File CSV Consensi";
-            this.grpCsvFile.TabIndex = 0;
-
+            // 
+            grpCsvFile.Controls.Add(lblCsvFile);
+            grpCsvFile.Controls.Add(txtCsvFile);
+            grpCsvFile.Controls.Add(btnBrowseCsv);
+            grpCsvFile.Controls.Add(lblPhoneColumn);
+            grpCsvFile.Controls.Add(cmbPhoneColumn);
+            grpCsvFile.Controls.Add(lblCsvInfo);
+            grpCsvFile.Controls.Add(dgvCsvPreview);
+            grpCsvFile.Location = new Point(10, 10);
+            grpCsvFile.Name = "grpCsvFile";
+            grpCsvFile.Size = new Size(870, 510);
+            grpCsvFile.TabIndex = 0;
+            grpCsvFile.TabStop = false;
+            grpCsvFile.Text = "File CSV Consensi";
+            // 
             // lblCsvFile
-            this.lblCsvFile.AutoSize = true;
-            this.lblCsvFile.Location = new Point(10, 25);
-            this.lblCsvFile.Text = "File CSV:";
-
+            // 
+            lblCsvFile.AutoSize = true;
+            lblCsvFile.Location = new Point(10, 25);
+            lblCsvFile.Name = "lblCsvFile";
+            lblCsvFile.Size = new Size(52, 15);
+            lblCsvFile.TabIndex = 0;
+            lblCsvFile.Text = "File CSV:";
+            // 
             // txtCsvFile
-            this.txtCsvFile.Location = new Point(80, 22);
-            this.txtCsvFile.Name = "txtCsvFile";
-            this.txtCsvFile.ReadOnly = true;
-            this.txtCsvFile.Size = new Size(650, 23);
-
+            // 
+            txtCsvFile.Location = new Point(80, 22);
+            txtCsvFile.Name = "txtCsvFile";
+            txtCsvFile.ReadOnly = true;
+            txtCsvFile.Size = new Size(650, 23);
+            txtCsvFile.TabIndex = 1;
+            // 
             // btnBrowseCsv
-            this.btnBrowseCsv.Location = new Point(740, 21);
-            this.btnBrowseCsv.Name = "btnBrowseCsv";
-            this.btnBrowseCsv.Size = new Size(90, 25);
-            this.btnBrowseCsv.Text = "Sfoglia...";
-            this.btnBrowseCsv.Click += new EventHandler(this.btnBrowseCsv_Click);
-
+            // 
+            btnBrowseCsv.Location = new Point(740, 21);
+            btnBrowseCsv.Name = "btnBrowseCsv";
+            btnBrowseCsv.Size = new Size(90, 25);
+            btnBrowseCsv.TabIndex = 2;
+            btnBrowseCsv.Text = "Sfoglia...";
+            btnBrowseCsv.Click += btnBrowseCsv_Click;
+            // 
             // lblPhoneColumn
-            this.lblPhoneColumn.AutoSize = true;
-            this.lblPhoneColumn.Location = new Point(10, 58);
-            this.lblPhoneColumn.Text = "Colonna numeri:";
-
+            // 
+            lblPhoneColumn.AutoSize = true;
+            lblPhoneColumn.Location = new Point(10, 58);
+            lblPhoneColumn.Name = "lblPhoneColumn";
+            lblPhoneColumn.Size = new Size(96, 15);
+            lblPhoneColumn.TabIndex = 3;
+            lblPhoneColumn.Text = "Colonna numeri:";
+            // 
             // cmbPhoneColumn
-            this.cmbPhoneColumn.DropDownStyle = ComboBoxStyle.DropDown;
-            this.cmbPhoneColumn.Location = new Point(120, 55);
-            this.cmbPhoneColumn.Name = "cmbPhoneColumn";
-            this.cmbPhoneColumn.Size = new Size(200, 23);
-
+            // 
+            cmbPhoneColumn.Location = new Point(120, 55);
+            cmbPhoneColumn.Name = "cmbPhoneColumn";
+            cmbPhoneColumn.Size = new Size(200, 23);
+            cmbPhoneColumn.TabIndex = 4;
+            // 
             // lblCsvInfo
-            this.lblCsvInfo.AutoSize = true;
-            this.lblCsvInfo.Location = new Point(10, 90);
-            this.lblCsvInfo.Name = "lblCsvInfo";
-            this.lblCsvInfo.Text = "Carica un file per vedere le informazioni";
-
+            // 
+            lblCsvInfo.AutoSize = true;
+            lblCsvInfo.Location = new Point(10, 90);
+            lblCsvInfo.Name = "lblCsvInfo";
+            lblCsvInfo.Size = new Size(216, 15);
+            lblCsvInfo.TabIndex = 5;
+            lblCsvInfo.Text = "Carica un file per vedere le informazioni";
+            // 
             // dgvCsvPreview
-            this.dgvCsvPreview.AllowUserToAddRows = false;
-            this.dgvCsvPreview.AllowUserToDeleteRows = false;
-            this.dgvCsvPreview.Location = new Point(10, 115);
-            this.dgvCsvPreview.Name = "dgvCsvPreview";
-            this.dgvCsvPreview.ReadOnly = true;
-            this.dgvCsvPreview.Size = new Size(845, 380);
-            this.dgvCsvPreview.TabIndex = 1;
-            this.dgvCsvPreview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            // === TAB REPLY ===
-            this.tabReply.Controls.Add(this.grpReply);
-            this.tabReply.Location = new Point(4, 24);
-            this.tabReply.Name = "tabReply";
-            this.tabReply.Size = new Size(892, 532);
-            this.tabReply.Text = "Risposta";
-
+            // 
+            dgvCsvPreview.AllowUserToAddRows = false;
+            dgvCsvPreview.AllowUserToDeleteRows = false;
+            dgvCsvPreview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCsvPreview.Location = new Point(10, 115);
+            dgvCsvPreview.Name = "dgvCsvPreview";
+            dgvCsvPreview.ReadOnly = true;
+            dgvCsvPreview.Size = new Size(845, 380);
+            dgvCsvPreview.TabIndex = 1;
+            // 
+            // tabReply
+            // 
+            tabReply.Controls.Add(grpReply);
+            tabReply.Location = new Point(4, 24);
+            tabReply.Name = "tabReply";
+            tabReply.Size = new Size(892, 388);
+            tabReply.TabIndex = 3;
+            tabReply.Text = "Risposta";
+            // 
             // grpReply
-            this.grpReply.Controls.Add(this.lblReplyTemplate);
-            this.grpReply.Controls.Add(this.txtReplyTemplate);
-            this.grpReply.Location = new Point(10, 10);
-            this.grpReply.Name = "grpReply";
-            this.grpReply.Size = new Size(870, 510);
-            this.grpReply.Text = "Template Risposta";
-            this.grpReply.TabIndex = 0;
-
+            // 
+            grpReply.Controls.Add(lblReplyTemplate);
+            grpReply.Controls.Add(txtReplyTemplate);
+            grpReply.Location = new Point(10, 10);
+            grpReply.Name = "grpReply";
+            grpReply.Size = new Size(870, 510);
+            grpReply.TabIndex = 0;
+            grpReply.TabStop = false;
+            grpReply.Text = "Template Risposta";
+            // 
             // lblReplyTemplate
-            this.lblReplyTemplate.AutoSize = true;
-            this.lblReplyTemplate.Location = new Point(10, 25);
-            this.lblReplyTemplate.Text = "Template del messaggio di risposta (usa <notfound>...</notfound> per i numeri non trovati, {numbers} come segnaposto):";
-
+            // 
+            lblReplyTemplate.AutoSize = true;
+            lblReplyTemplate.Location = new Point(10, 25);
+            lblReplyTemplate.Name = "lblReplyTemplate";
+            lblReplyTemplate.Size = new Size(658, 15);
+            lblReplyTemplate.TabIndex = 0;
+            lblReplyTemplate.Text = "Template del messaggio di risposta (usa <notfound>...</notfound> per i numeri non trovati, {numbers} come segnaposto):";
+            // 
             // txtReplyTemplate
-            this.txtReplyTemplate.Location = new Point(10, 50);
-            this.txtReplyTemplate.Multiline = true;
-            this.txtReplyTemplate.Name = "txtReplyTemplate";
-            this.txtReplyTemplate.ScrollBars = ScrollBars.Vertical;
-            this.txtReplyTemplate.Size = new Size(840, 440);
-            this.txtReplyTemplate.Text = "Gentile mittente,\r\n\r\nIn riscontro alla Sua richiesta, in allegato troverà il file CSV con i numeri verificati.\r\n\r\n<notfound>Si precisa inoltre che dei numeri verificati, i seguenti: {numbers} non risultano essere numeri in nostro possesso.</notfound>\r\n\r\nCordiali saluti.";
-
-            // === TAB SECURITY ===
-            this.tabSecurity.Controls.Add(this.grpSecurity);
-            this.tabSecurity.Location = new Point(4, 24);
-            this.tabSecurity.Name = "tabSecurity";
-            this.tabSecurity.Size = new Size(892, 532);
-            this.tabSecurity.Text = "Sicurezza";
-
+            // 
+            txtReplyTemplate.Location = new Point(10, 86);
+            txtReplyTemplate.Multiline = true;
+            txtReplyTemplate.Name = "txtReplyTemplate";
+            txtReplyTemplate.ScrollBars = ScrollBars.Vertical;
+            txtReplyTemplate.Size = new Size(840, 289);
+            txtReplyTemplate.TabIndex = 1;
+            txtReplyTemplate.Text = resources.GetString("txtReplyTemplate.Text");
+            // 
+            // tabSecurity
+            // 
+            tabSecurity.Controls.Add(grpSecurity);
+            tabSecurity.Location = new Point(4, 24);
+            tabSecurity.Name = "tabSecurity";
+            tabSecurity.Size = new Size(892, 388);
+            tabSecurity.TabIndex = 4;
+            tabSecurity.Text = "Sicurezza";
+            // 
             // grpSecurity
-            this.grpSecurity.Controls.Add(this.lblHmacKey);
-            this.grpSecurity.Controls.Add(this.txtHmacKey);
-            this.grpSecurity.Location = new Point(10, 10);
-            this.grpSecurity.Name = "grpSecurity";
-            this.grpSecurity.Size = new Size(870, 80);
-            this.grpSecurity.Text = "Chiave HMAC Condivisa";
-            this.grpSecurity.TabIndex = 0;
-
+            // 
+            grpSecurity.Controls.Add(lblHmacKey);
+            grpSecurity.Controls.Add(txtHmacKey);
+            grpSecurity.Location = new Point(10, 10);
+            grpSecurity.Name = "grpSecurity";
+            grpSecurity.Size = new Size(870, 80);
+            grpSecurity.TabIndex = 0;
+            grpSecurity.TabStop = false;
+            grpSecurity.Text = "Chiave HMAC Condivisa";
+            // 
             // lblHmacKey
-            this.lblHmacKey.AutoSize = true;
-            this.lblHmacKey.Location = new Point(10, 30);
-            this.lblHmacKey.Text = "Chiave condivisa:";
-
+            // 
+            lblHmacKey.AutoSize = true;
+            lblHmacKey.Location = new Point(10, 30);
+            lblHmacKey.Name = "lblHmacKey";
+            lblHmacKey.Size = new Size(99, 15);
+            lblHmacKey.TabIndex = 0;
+            lblHmacKey.Text = "Chiave condivisa:";
+            // 
             // txtHmacKey
-            this.txtHmacKey.Location = new Point(130, 27);
-            this.txtHmacKey.Name = "txtHmacKey";
-            this.txtHmacKey.Size = new Size(400, 23);
-
-            // === BUTTONS PANEL ===
-            this.pnlButtons.Controls.Add(this.btnSaveConfig);
-            this.pnlButtons.Controls.Add(this.btnLoadConfig);
-            this.pnlButtons.Controls.Add(this.btnSchedule);
-            this.pnlButtons.Controls.Add(this.btnCheckNow);
-            this.pnlButtons.Controls.Add(this.btnViewHistory);
-            this.pnlButtons.Dock = DockStyle.Bottom;
-            this.pnlButtons.Location = new Point(0, 560);
-            this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new Size(900, 45);
-            this.pnlButtons.TabIndex = 1;
-
+            // 
+            txtHmacKey.Location = new Point(130, 27);
+            txtHmacKey.Name = "txtHmacKey";
+            txtHmacKey.Size = new Size(400, 23);
+            txtHmacKey.TabIndex = 1;
+            // 
+            // pnlButtons
+            // 
+            pnlButtons.Controls.Add(btnSaveConfig);
+            pnlButtons.Controls.Add(btnLoadConfig);
+            pnlButtons.Controls.Add(btnSchedule);
+            pnlButtons.Controls.Add(btnCheckNow);
+            pnlButtons.Controls.Add(btnViewHistory);
+            pnlButtons.Dock = DockStyle.Bottom;
+            pnlButtons.Location = new Point(0, 416);
+            pnlButtons.Name = "pnlButtons";
+            pnlButtons.Size = new Size(900, 45);
+            pnlButtons.TabIndex = 1;
+            // 
             // btnSaveConfig
-            this.btnSaveConfig.Location = new Point(10, 10);
-            this.btnSaveConfig.Name = "btnSaveConfig";
-            this.btnSaveConfig.Size = new Size(150, 28);
-            this.btnSaveConfig.Text = "Salva Configurazione";
-            this.btnSaveConfig.Click += new EventHandler(this.btnSaveConfig_Click);
-
+            // 
+            btnSaveConfig.Location = new Point(10, 10);
+            btnSaveConfig.Name = "btnSaveConfig";
+            btnSaveConfig.Size = new Size(150, 28);
+            btnSaveConfig.TabIndex = 0;
+            btnSaveConfig.Text = "Salva Configurazione";
+            btnSaveConfig.Click += btnSaveConfig_Click;
+            // 
             // btnLoadConfig
-            this.btnLoadConfig.Location = new Point(170, 10);
-            this.btnLoadConfig.Name = "btnLoadConfig";
-            this.btnLoadConfig.Size = new Size(150, 28);
-            this.btnLoadConfig.Text = "Carica Configurazione";
-            this.btnLoadConfig.Click += new EventHandler(this.btnLoadConfig_Click);
-
+            // 
+            btnLoadConfig.Location = new Point(170, 10);
+            btnLoadConfig.Name = "btnLoadConfig";
+            btnLoadConfig.Size = new Size(150, 28);
+            btnLoadConfig.TabIndex = 1;
+            btnLoadConfig.Text = "Carica Configurazione";
+            btnLoadConfig.Click += btnLoadConfig_Click;
+            // 
             // btnSchedule
-            this.btnSchedule.Location = new Point(330, 10);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new Size(150, 28);
-            this.btnSchedule.Text = "Pianifica in Windows";
-            this.btnSchedule.Click += new EventHandler(this.btnSchedule_Click);
-
+            // 
+            btnSchedule.Location = new Point(330, 10);
+            btnSchedule.Name = "btnSchedule";
+            btnSchedule.Size = new Size(150, 28);
+            btnSchedule.TabIndex = 2;
+            btnSchedule.Text = "Pianifica in Windows";
+            btnSchedule.Click += btnSchedule_Click;
+            // 
             // btnCheckNow
-            this.btnCheckNow.Location = new Point(490, 10);
-            this.btnCheckNow.Name = "btnCheckNow";
-            this.btnCheckNow.Size = new Size(110, 28);
-            this.btnCheckNow.Text = "Controlla Ora";
-            this.btnCheckNow.BackColor = Color.FromArgb(0, 160, 80);
-            this.btnCheckNow.ForeColor = Color.White;
-            this.btnCheckNow.Click += new EventHandler(this.btnCheckNow_Click);
-
+            // 
+            btnCheckNow.BackColor = Color.FromArgb(0, 160, 80);
+            btnCheckNow.ForeColor = Color.White;
+            btnCheckNow.Location = new Point(490, 10);
+            btnCheckNow.Name = "btnCheckNow";
+            btnCheckNow.Size = new Size(110, 28);
+            btnCheckNow.TabIndex = 3;
+            btnCheckNow.Text = "Controlla Ora";
+            btnCheckNow.UseVisualStyleBackColor = false;
+            btnCheckNow.Click += btnCheckNow_Click;
+            // 
             // btnViewHistory
-            this.btnViewHistory.Location = new Point(610, 10);
-            this.btnViewHistory.Name = "btnViewHistory";
-            this.btnViewHistory.Size = new Size(130, 28);
-            this.btnViewHistory.Text = "Visualizza Storico";
-            this.btnViewHistory.Click += new EventHandler(this.btnViewHistory_Click);
-
-            // === HISTORY PANEL ===
-            this.pnlHistory.Controls.Add(this.lblHistory);
-            this.pnlHistory.Controls.Add(this.dgvHistory);
-            this.pnlHistory.Dock = DockStyle.Bottom;
-            this.pnlHistory.Location = new Point(0, 605);
-            this.pnlHistory.Name = "pnlHistory";
-            this.pnlHistory.Size = new Size(900, 200);
-            this.pnlHistory.Visible = false;
-            this.pnlHistory.TabIndex = 2;
-
+            // 
+            btnViewHistory.Location = new Point(610, 10);
+            btnViewHistory.Name = "btnViewHistory";
+            btnViewHistory.Size = new Size(130, 28);
+            btnViewHistory.TabIndex = 4;
+            btnViewHistory.Text = "Visualizza Storico";
+            btnViewHistory.Click += btnViewHistory_Click;
+            // 
+            // pnlHistory
+            // 
+            pnlHistory.Controls.Add(lblHistory);
+            pnlHistory.Controls.Add(dgvHistory);
+            pnlHistory.Dock = DockStyle.Bottom;
+            pnlHistory.Location = new Point(0, 461);
+            pnlHistory.Name = "pnlHistory";
+            pnlHistory.Size = new Size(900, 200);
+            pnlHistory.TabIndex = 2;
+            pnlHistory.Visible = false;
+            // 
             // lblHistory
-            this.lblHistory.AutoSize = true;
-            this.lblHistory.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblHistory.Location = new Point(5, 5);
-            this.lblHistory.Text = "Storico Elaborazioni";
-
+            // 
+            lblHistory.AutoSize = true;
+            lblHistory.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblHistory.Location = new Point(5, 5);
+            lblHistory.Name = "lblHistory";
+            lblHistory.Size = new Size(116, 15);
+            lblHistory.TabIndex = 0;
+            lblHistory.Text = "Storico Elaborazioni";
+            // 
             // dgvHistory
-            this.dgvHistory.AllowUserToAddRows = false;
-            this.dgvHistory.AllowUserToDeleteRows = false;
-            this.dgvHistory.Location = new Point(5, 25);
-            this.dgvHistory.Name = "dgvHistory";
-            this.dgvHistory.ReadOnly = true;
-            this.dgvHistory.Size = new Size(885, 165);
-            this.dgvHistory.TabIndex = 0;
-            this.dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+            // 
+            dgvHistory.AllowUserToAddRows = false;
+            dgvHistory.AllowUserToDeleteRows = false;
+            dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHistory.Location = new Point(5, 25);
+            dgvHistory.Name = "dgvHistory";
+            dgvHistory.ReadOnly = true;
+            dgvHistory.Size = new Size(885, 165);
+            dgvHistory.TabIndex = 0;
+            // 
             // ReceiverConfigForm
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(900, 650);
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.pnlButtons);
-            this.Controls.Add(this.pnlHistory);
-            this.Font = new Font("Segoe UI", 9F);
-            this.MinimumSize = new Size(916, 700);
-            this.Name = "ReceiverConfigForm";
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "AutoCons - Configurazione Receiver";
-
-            this.tabControl.ResumeLayout(false);
-            this.tabImap.ResumeLayout(false);
-            this.tabSmtp.ResumeLayout(false);
-            this.tabCsv.ResumeLayout(false);
-            this.tabReply.ResumeLayout(false);
-            this.tabSecurity.ResumeLayout(false);
-            this.grpImap.ResumeLayout(false);
-            this.grpImap.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudImapPort).EndInit();
-            this.grpSchedule.ResumeLayout(false);
-            this.grpSchedule.PerformLayout();
-            this.grpMonitor.ResumeLayout(false);
-            this.grpMonitor.PerformLayout();
-            this.grpSmtp.ResumeLayout(false);
-            this.grpSmtp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudSmtpPort).EndInit();
-            this.grpSentImap.ResumeLayout(false);
-            this.grpSentImap.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudSentImapPort).EndInit();
-            this.grpCsvFile.ResumeLayout(false);
-            this.grpCsvFile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dgvCsvPreview).EndInit();
-            this.grpReply.ResumeLayout(false);
-            this.grpReply.PerformLayout();
-            this.grpSecurity.ResumeLayout(false);
-            this.grpSecurity.PerformLayout();
-            this.pnlButtons.ResumeLayout(false);
-            this.pnlHistory.ResumeLayout(false);
-            this.pnlHistory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dgvHistory).EndInit();
-            this.ResumeLayout(false);
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(900, 661);
+            Controls.Add(tabControl);
+            Controls.Add(pnlButtons);
+            Controls.Add(pnlHistory);
+            Font = new Font("Segoe UI", 9F);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(916, 700);
+            Name = "ReceiverConfigForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "AutoCons - Configurazione Receiver";
+            Load += ReceiverConfigForm_Load;
+            tabControl.ResumeLayout(false);
+            tabImap.ResumeLayout(false);
+            grpImap.ResumeLayout(false);
+            grpImap.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudImapPort).EndInit();
+            grpMonitor.ResumeLayout(false);
+            grpMonitor.PerformLayout();
+            grpSchedule.ResumeLayout(false);
+            grpSchedule.PerformLayout();
+            tabSmtp.ResumeLayout(false);
+            grpSmtp.ResumeLayout(false);
+            grpSmtp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudSmtpPort).EndInit();
+            grpSentImap.ResumeLayout(false);
+            grpSentImap.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudSentImapPort).EndInit();
+            tabCsv.ResumeLayout(false);
+            grpCsvFile.ResumeLayout(false);
+            grpCsvFile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCsvPreview).EndInit();
+            tabReply.ResumeLayout(false);
+            grpReply.ResumeLayout(false);
+            grpReply.PerformLayout();
+            tabSecurity.ResumeLayout(false);
+            grpSecurity.ResumeLayout(false);
+            grpSecurity.PerformLayout();
+            pnlButtons.ResumeLayout(false);
+            pnlHistory.ResumeLayout(false);
+            pnlHistory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
