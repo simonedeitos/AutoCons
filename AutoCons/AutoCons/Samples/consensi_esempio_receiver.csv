@@ -1,0 +1,21 @@
+ID;Nome;Cognome;Numeri;Consenso;DataConsenso;Canale
+1;Mario;Rossi;+393381234567;SI;2025-01-15;Web
+2;Luca;Bianchi;0039 338 9876543;SI;2025-02-20;Telefono
+3;Anna;Verdi;3381112233;NO;2025-03-10;Email
+4;Sara;Neri;+39 339-4445566;SI;2025-04-05;Web
+5;Paolo;Gialli;3401234567;SI;2025-05-12;Telefono
+6;Marco;Blu;+393411234567;NO;2025-06-18;Web
+7;Giulia;Marroni;3421234567;SI;2025-07-22;Email
+8;Francesca;Viola;343.9876543;SI;2025-08-30;Telefono
+9;Roberto;Arancio;+39 344-1112233;SI;2025-09-14;Web
+10;Elena;Rosa;3451234567;NO;2025-10-01;Email
+11;Davide;Grigio;+393461234567;SI;2025-11-05;Telefono
+12;Chiara;Celeste;3479876543;SI;2025-12-10;Web
+13;Andrea;Turchese;3481112233;NO;2026-01-15;Email
+14;Valentina;Lilla;+39 349-4445566;SI;2026-02-20;Telefono
+15;Simone;Indaco;3501234567;SI;2026-03-01;Web
+16;Laura;Corallo;+39 351-9876543;SI;2026-01-10;Email
+17;Federico;Ambra;3521112233;NO;2026-02-15;Telefono
+18;Alessia;Magenta;+393531234567;SI;2026-03-20;Web
+19;Matteo;Ocra;3549876543;SI;2025-04-25;Email
+20;Silvia;Seppia;3551112233;NO;2025-05-30;Telefono

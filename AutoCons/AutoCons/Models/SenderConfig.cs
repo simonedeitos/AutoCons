@@ -37,6 +37,6 @@ namespace AutoCons.Models
         public string Subject { get; set; } = string.Empty;
         public string BodyTemplate { get; set; } = string.Empty;
 
-        public string SharedHmacKey { get; set; } = string.Empty;
+        public string SharedHmacKey { get; set; } = "AutoCons2026!VerificaConsensi";
     }
 }

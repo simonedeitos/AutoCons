@@ -21,6 +21,7 @@ namespace AutoCons.Forms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+            lblReplyTemplate.Text = "Template del messaggio di risposta:\r\nUsa i tag <notfound>...</notfound> per racchiudere la sezione che apparirà SOLO se ci sono numeri non trovati. Usa {numbers} all'interno per il segnaposto dei numeri.";
             LoadConfig();
         }
 

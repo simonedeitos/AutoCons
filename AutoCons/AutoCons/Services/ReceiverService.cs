@@ -194,20 +194,18 @@ namespace AutoCons.Services
             }
 
             // Build reply body
-            string notFoundStr = notFound.Count > 0
-                ? string.Join(", ", notFound)
-                : string.Empty;
-
             string replyBody = _config.ReplyTemplate;
             if (notFound.Count == 0)
             {
-                // Remove the <notfound> placeholder line entirely
-                replyBody = Regex.Replace(replyBody,
-                    @"[^\n]*<notfound>[^\n]*\n?", string.Empty);
+                // Remove entire <notfound>...</notfound> section including tags and content
+                replyBody = Regex.Replace(replyBody, @"<notfound>.*?</notfound>\n?", string.Empty, RegexOptions.Singleline);
             }
             else
             {
-                replyBody = replyBody.Replace("<notfound>", notFoundStr);
+                // Keep the content, remove the tags, replace {numbers} placeholder
+                string notFoundStr = string.Join(", ", notFound);
+                replyBody = replyBody.Replace("<notfound>", "").Replace("</notfound>", "");
+                replyBody = replyBody.Replace("{numbers}", notFoundStr);
             }
 
             // Build CSV attachment from found rows
