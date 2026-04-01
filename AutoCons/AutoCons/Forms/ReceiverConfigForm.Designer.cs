@@ -460,7 +460,7 @@ namespace AutoCons.Forms
             // lblReplyTemplate
             this.lblReplyTemplate.AutoSize = true;
             this.lblReplyTemplate.Location = new Point(10, 25);
-            this.lblReplyTemplate.Text = "Template del messaggio di risposta (usa <notfound> per i numeri non trovati):";
+            this.lblReplyTemplate.Text = "Template del messaggio di risposta (usa <notfound>...</notfound> per i numeri non trovati, {numbers} come segnaposto):";
 
             // txtReplyTemplate
             this.txtReplyTemplate.Location = new Point(10, 50);
@@ -468,7 +468,7 @@ namespace AutoCons.Forms
             this.txtReplyTemplate.Name = "txtReplyTemplate";
             this.txtReplyTemplate.ScrollBars = ScrollBars.Vertical;
             this.txtReplyTemplate.Size = new Size(840, 440);
-            this.txtReplyTemplate.Text = "Gentile mittente,\r\n\r\nIn riscontro alla Sua richiesta, in allegato troverà il file CSV con i numeri verificati.\r\n\r\nSi precisa inoltre che dei numeri verificati, i seguenti: <notfound> non risultano essere numeri in nostro possesso.\r\n\r\nCordiali saluti";
+            this.txtReplyTemplate.Text = "Gentile mittente,\r\n\r\nIn riscontro alla Sua richiesta, in allegato troverà il file CSV con i numeri verificati.\r\n\r\n<notfound>Si precisa inoltre che dei numeri verificati, i seguenti: {numbers} non risultano essere numeri in nostro possesso.</notfound>\r\n\r\nCordiali saluti.";
 
             // === TAB SECURITY ===
             this.tabSecurity.Controls.Add(this.grpSecurity);
