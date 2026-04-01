@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "LSjya9GCvGU=",
+  "dgSpecHash": "apsKrqQn4G0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\simon\\source\\repos\\AutoCons\\AutoCons\\AutoCons.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/runner/work/AutoCons/AutoCons/AutoCons/AutoCons/AutoCons.csproj",
+  "expectedPackageFiles": [
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/bouncycastle.cryptography/2.6.2/bouncycastle.cryptography.2.6.2.nupkg.sha512",
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/csvhelper/33.0.1/csvhelper.33.0.1.nupkg.sha512",
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/mailkit/4.15.1/mailkit.4.15.1.nupkg.sha512",
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/mimekit/4.15.1/mimekit.4.15.1.nupkg.sha512",
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/system.formats.asn1/10.0.2/system.formats.asn1.10.0.2.nupkg.sha512",
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/system.security.cryptography.pkcs/10.0.0/system.security.cryptography.pkcs.10.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/microsoft.netcore.app.ref/10.0.5/microsoft.netcore.app.ref.10.0.5.nupkg.sha512",
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/microsoft.windowsdesktop.app.ref/10.0.5/microsoft.windowsdesktop.app.ref.10.0.5.nupkg.sha512",
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/microsoft.aspnetcore.app.ref/10.0.5/microsoft.aspnetcore.app.ref.10.0.5.nupkg.sha512",
+    "/tmp/codeql-scratch-b052bd7ccdd5ef94/dbs/csharp/working/packages/microsoft.netcore.app.host.linux-x64/10.0.5/microsoft.netcore.app.host.linux-x64.10.0.5.nupkg.sha512"
+  ],
   "logs": []
 }

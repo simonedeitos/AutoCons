@@ -1,0 +1,24 @@
+## .NET / C# build artifacts
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.vspscc
+*.vssscc
+
+## NuGet
+packages/
+*.nupkg
+.nuget/
+
+## Log files
+Log/
+
+## Config files with credentials (generated at runtime)
+config_sender.json
+config_receiver.json
+
+## OS
+.DS_Store
+Thumbs.db
