@@ -102,8 +102,8 @@ namespace AutoCons.Services
             var numberList = string.Join(Environment.NewLine, numbers.Select(n => $"{n};"));
             var body = _config.BodyTemplate.Replace("<numbers>", numberList);
 
-            // Compute HMAC signature on body
-            var signature = SignatureService.Sign(body, _config.SharedHmacKey);
+            // Compute HMAC signature on Subject (il body può essere alterato dal server di posta)
+            var signature = SignatureService.Sign(message.Subject, _config.SharedHmacKey);
 
             message.Headers.Add("X-AutoCons-Signature", signature);
 
