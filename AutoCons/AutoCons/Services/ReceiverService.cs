@@ -62,15 +62,17 @@ namespace AutoCons.Services
         {
             LogService.Info($"ReceiverService: elaborazione email '{original.Subject}' da '{original.From}'");
 
-            // Verify HMAC signature
-            var body = GetTextBody(original);
+            // Verify HMAC signature on Subject (il body può essere alterato dal server di posta durante il transito)
             var signature = original.Headers["X-AutoCons-Signature"] ?? string.Empty;
 
-            if (!SignatureService.Verify(body, signature, _config.SharedHmacKey))
+            if (!SignatureService.Verify(original.Subject ?? string.Empty, signature, _config.SharedHmacKey))
             {
                 LogService.Warn($"ReceiverService: firma HMAC non valida per email '{original.Subject}', ignorata");
                 return;
             }
+
+            // Now extract the body for phone number parsing
+            var body = GetTextBody(original);
 
             // Parse phone numbers from email body
             var emailNumbers = ExtractPhoneNumbers(body);
@@ -219,8 +221,8 @@ namespace AutoCons.Services
                     ContentType.Parse("text/csv"));
             }
 
-            // HMAC signature on reply body
-            var sig = SignatureService.Sign(replyBody, _config.SharedHmacKey);
+            // HMAC signature on reply Subject
+            var sig = SignatureService.Sign(reply.Subject, _config.SharedHmacKey);
             reply.Headers.Add("X-AutoCons-Signature", sig);
 
             reply.Body = builder.ToMessageBody();
