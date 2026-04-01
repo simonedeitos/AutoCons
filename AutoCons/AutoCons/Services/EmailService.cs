@@ -38,7 +38,7 @@ namespace AutoCons.Services
             using (var smtp = new SmtpClient())
             {
                 await smtp.ConnectAsync(_smtpServer, _smtpPort,
-                    _smtpUseSsl ? MailKit.Security.SecureSocketOptions.StartTls : MailKit.Security.SecureSocketOptions.None);
+                    _smtpUseSsl ? MailKit.Security.SecureSocketOptions.Auto : MailKit.Security.SecureSocketOptions.None);
                 await smtp.AuthenticateAsync(_username, _password);
                 await smtp.SendAsync(message);
                 await smtp.DisconnectAsync(true);
@@ -55,7 +55,7 @@ namespace AutoCons.Services
         {
             using var imap = new ImapClient();
             await imap.ConnectAsync(_imapServer, _imapPort,
-                _imapUseSsl ? MailKit.Security.SecureSocketOptions.SslOnConnect : MailKit.Security.SecureSocketOptions.None);
+                _imapUseSsl ? MailKit.Security.SecureSocketOptions.Auto : MailKit.Security.SecureSocketOptions.None);
             await imap.AuthenticateAsync(_username, _password);
 
             // Find Sent folder
@@ -100,7 +100,7 @@ namespace AutoCons.Services
 
             using var imap = new ImapClient();
             await imap.ConnectAsync(_imapServer, _imapPort,
-                _imapUseSsl ? MailKit.Security.SecureSocketOptions.SslOnConnect : MailKit.Security.SecureSocketOptions.None);
+                _imapUseSsl ? MailKit.Security.SecureSocketOptions.Auto : MailKit.Security.SecureSocketOptions.None);
             await imap.AuthenticateAsync(_username, _password);
 
             await imap.Inbox.OpenAsync(FolderAccess.ReadWrite);
@@ -128,7 +128,7 @@ namespace AutoCons.Services
 
             using var imap = new ImapClient();
             await imap.ConnectAsync(_imapServer, _imapPort,
-                _imapUseSsl ? MailKit.Security.SecureSocketOptions.SslOnConnect : MailKit.Security.SecureSocketOptions.None);
+                _imapUseSsl ? MailKit.Security.SecureSocketOptions.Auto : MailKit.Security.SecureSocketOptions.None);
             await imap.AuthenticateAsync(_username, _password);
 
             await imap.Inbox.OpenAsync(FolderAccess.ReadWrite);
@@ -150,7 +150,7 @@ namespace AutoCons.Services
             using (var smtp = new SmtpClient())
             {
                 await smtp.ConnectAsync(_smtpServer, _smtpPort,
-                    _smtpUseSsl ? MailKit.Security.SecureSocketOptions.StartTls : MailKit.Security.SecureSocketOptions.None);
+                    _smtpUseSsl ? MailKit.Security.SecureSocketOptions.Auto : MailKit.Security.SecureSocketOptions.None);
                 await smtp.AuthenticateAsync(_username, _password);
                 await smtp.SendAsync(reply);
                 await smtp.DisconnectAsync(true);
@@ -161,7 +161,7 @@ namespace AutoCons.Services
             {
                 using var imap = new ImapClient();
                 await imap.ConnectAsync(sentImapServer, sentImapPort,
-                    sentImapSsl ? MailKit.Security.SecureSocketOptions.SslOnConnect : MailKit.Security.SecureSocketOptions.None);
+                    sentImapSsl ? MailKit.Security.SecureSocketOptions.Auto : MailKit.Security.SecureSocketOptions.None);
                 await imap.AuthenticateAsync(_username, _password);
 
                 var sentFolder = await FindSentFolderAsync(imap);
